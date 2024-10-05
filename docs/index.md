@@ -16,3 +16,6 @@ hero:
       link: https://www.github.com/dooit-org/dooit-bar-utils
 ---
 
+::: danger ALERT!
+This library is for Dooit v3 which has not been released yet
+:::
