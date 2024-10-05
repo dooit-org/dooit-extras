@@ -18,6 +18,32 @@ export default defineConfig({
     ],
     search: {
       provider: "local"
-    }
+    },
+    sidebar: [
+      {
+        text: 'Getting Started',
+        items: [
+          { text: 'Introduction', link: '/introduction' },
+          { text: 'Installation', link: '/introduction/installation' },
+        ]
+      },
+
+      {
+        text: 'Built-in Widgets',
+        items: [
+          { text: 'Introduction', link: '/widgets' },
+          { text: 'Mode', link: '/widgets/mode' },
+          { text: 'Workspace Progress', link: '/widgets/workspace_progress' },
+        ]
+      },
+
+      {
+        text: 'Built-in Bars',
+        items: [
+          { text: 'Introduction', link: '/bars' },
+        ]
+      },
+
+    ]
   }
 })
