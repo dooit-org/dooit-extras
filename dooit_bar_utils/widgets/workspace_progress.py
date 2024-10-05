@@ -1,11 +1,10 @@
 from typing import Union
 from dooit.ui.api.events import subscribe
 from dooit.ui.api import DooitAPI
-from dooit.ui.tui import DooitThemeBase
 from dooit.ui.events import WorkspaceSelected, TodoStatusChanged
 from dooit.api import Workspace
 from rich.text import Text
-from rich.style import Style, StyleType
+from rich.style import Style
 
 from ..widget import BarUtilWidgetBase
 
@@ -43,11 +42,11 @@ class WorkspaceProgress(BarUtilWidgetBase):
     def __init__(
         self,
         api: DooitAPI,
-        fg: str = "",
-        bg: str = "",
         text_left: str = " ",
         text_right: str = " ",
         reverse_pads: bool = False,
+        fg: str = "",
+        bg: str = "",
     ) -> None:
         super().__init__(
             func=get_workspace_completion,
