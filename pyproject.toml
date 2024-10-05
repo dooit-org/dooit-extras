@@ -4,4 +4,9 @@ version = "0.1.0"
 description = "Bar utils for Dooit"
 readme = "README.md"
 requires-python = ">=3.8.1"
-dependencies = []
+dependencies = [
+    "dooit",
+]
+
+[tool.uv.sources]
+dooit = { git = "https://github.com/kraanzu/dooit", branch = "develop" }
