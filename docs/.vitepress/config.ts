@@ -8,8 +8,8 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
-      { text: "Widgets", link: "/widgets" },
-      { text: "Bars", link: "/bars" },
+      { text: "Widgets", link: "/introduction/widgets" },
+      { text: "Bars", link: "/introduction/bars" },
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/dooit-org/dooit-bar-utils" },
@@ -25,13 +25,14 @@ export default defineConfig({
         items: [
           { text: 'Introduction', link: '/introduction' },
           { text: 'Installation', link: '/introduction/installation' },
+          { text: 'Widgets', link: '/introduction/widgets' },
+          { text: 'Bars', link: '/introduction/bars' },
         ]
       },
 
       {
         text: 'Built-in Widgets',
         items: [
-          { text: 'Introduction', link: '/widgets' },
           { text: 'Mode', link: '/widgets/mode' },
           { text: 'Workspace Progress', link: '/widgets/workspace_progress' },
         ]
@@ -40,7 +41,7 @@ export default defineConfig({
       {
         text: 'Built-in Bars',
         items: [
-          { text: 'Introduction', link: '/bars' },
+          { text: 'Default', link: '/bars/default' },
         ]
       },
 
