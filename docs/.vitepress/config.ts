@@ -4,7 +4,7 @@ import { defineConfig } from "vitepress"
 export default defineConfig({
   title: "Dooit Bar Utils",
   description: "Bar utils for Dooit",
-  base: '/repo/'
+  base: '/repo/',
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
