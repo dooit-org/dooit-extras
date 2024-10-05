@@ -38,9 +38,9 @@ class Mode(BarUtilWidgetBase):
         self,
         api: DooitAPI,
         mode_styles: Dict[str, Style] = {},
-        text_left: str = "?",
+        text_left: str = " ",
         text_right: str = " ",
-        reverse_pads: bool = True,
+        reverse_pads: bool = False,
     ) -> None:
         super().__init__(
             func=get_mode,
