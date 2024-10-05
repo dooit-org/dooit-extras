@@ -8,5 +8,8 @@ dependencies = [
     "dooit",
 ]
 
+[tool.setuptools]
+packages = { find = { exclude = ["node_modules"] } }
+
 [tool.uv.sources]
 dooit = { git = "https://github.com/kraanzu/dooit", branch = "develop" }
