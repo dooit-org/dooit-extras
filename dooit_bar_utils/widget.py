@@ -9,7 +9,7 @@ class BarUtilWidgetBase(StatusBarWidget):
     Base Widget for all Bar Utils Widgets
     """
 
-    def __init___(
+    def __init__(
         self,
         func: Callable,
         width: Optional[int],

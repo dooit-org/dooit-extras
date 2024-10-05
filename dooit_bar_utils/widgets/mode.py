@@ -14,7 +14,7 @@ class Mode(BarUtilWidgetBase):
     Mode Bar Widget to show mode
     """
 
-    def __init___(
+    def __init__(
         self,
         text_left: str = " ",
         text_right: str = " ",
