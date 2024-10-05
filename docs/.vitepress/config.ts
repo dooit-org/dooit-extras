@@ -7,6 +7,8 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
+      { text: "Widgets", link: "/widgets" },
+      { text: "Bars", link: "/bars" },
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/dooit-org/dooit-bar-utils" },

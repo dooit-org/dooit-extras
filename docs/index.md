@@ -3,19 +3,16 @@ layout: home
 
 hero:
   name: "Dooit Bar Utils"
-  tagline: "Bar utils for Dooit"
+  tagline: "A collection of a lot of widgets various pre-customized bars for Dooit"
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: See Bars
+      link: /bars
+    - theme: brand
+      text: See Widgets
+      link: /widgets
     - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      text: View on Github
+      link: https://www.github.com/dooit-org/dooit-bar-utils
 ---
 
