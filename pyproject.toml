@@ -1,0 +1,7 @@
+[project]
+name = "dooit-bar-utils"
+version = "0.1.0"
+description = "Bar and bar utils for Dooit"
+readme = "README.md"
+requires-python = ">=3.8.1"
+dependencies = []
