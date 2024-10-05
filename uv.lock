@@ -4,7 +4,7 @@ requires-python = ">=3.8.1"
 [[package]]
 name = "dooit"
 version = "3.0.0"
-source = { git = "https://github.com/kraanzu/dooit?branch=develop#d8efebd8ead3ae2e8d9c337358d1cfe4203214d8" }
+source = { git = "https://github.com/kraanzu/dooit?branch=develop#03ca06b4064a3f6129e930ce917b6ae20f6bf2a5" }
 dependencies = [
     { name = "platformdirs" },
     { name = "pyperclip" },
