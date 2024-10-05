@@ -4,7 +4,7 @@ from rich.text import Text
 from dooit.ui.widgets.bars import StatusBarWidget
 
 
-class BarUtil(StatusBarWidget):
+class BarUtilWidgetBase(StatusBarWidget):
     """
     Base Widget for all Bar Utils Widgets
     """
