@@ -4,7 +4,7 @@ import { defineConfig } from "vitepress"
 export default defineConfig({
   title: "Dooit Bar Utils",
   description: "Bar utils for Dooit",
-  base: '/dooit-bar-utils/',
+  base: '/dooit-extras/',
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
@@ -12,7 +12,7 @@ export default defineConfig({
       { text: "Bars", link: "/introduction/bars" },
     ],
     socialLinks: [
-      { icon: "github", link: "https://github.com/dooit-org/dooit-bar-utils" },
+      { icon: "github", link: "https://github.com/dooit-org/dooit-extras" },
       { icon: "discord", link: "https://discord.com/invite/WA2ER9MBWa" },
       { icon: "twitter", link: "https://twitter.com/kraanzu" },
     ],
