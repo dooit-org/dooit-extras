@@ -1,5 +1,6 @@
 from typing import Callable, Optional
 from dooit.ui.api import DooitAPI
+from dooit.ui.tui import DooitThemeBase
 from rich.style import Style
 from rich.text import Text, TextType
 from dooit.ui.widgets.bars import StatusBarWidget
@@ -27,6 +28,10 @@ class BarUtilWidgetBase(StatusBarWidget):
 
     def reversed_style(self, style: Style) -> Style:
         return Style(color=style.bgcolor, bgcolor=style.color)
+
+    @property
+    def theme(self) -> DooitThemeBase:
+        return self.api.vars.theme
 
     @property
     def raw_text(self) -> str:
