@@ -3,11 +3,13 @@
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs.dooit.url = "github:kraanzu/dooit?ref=develop";
 
   outputs = {
     self,
     nixpkgs,
     flake-utils,
+    dooit
   }
   :
     flake-utils.lib.eachDefaultSystem (
@@ -31,6 +33,7 @@
 
           nativeBuildInputs = with pkgs; [
             poetry
+            dooit.packages.${system}.default
           ];
 
           pythonRelaxDeps = [
@@ -52,7 +55,9 @@
             ]);
 
           shellHook = ''
+            cd site
             ${pkgs.bun}/bin/bun install
+            cd ..
           '';
         };
       }
