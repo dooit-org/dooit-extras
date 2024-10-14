@@ -1,2 +1,2 @@
-# dooit-bar-utils
-[WIP] Bar Utils for Dooit v3
+# Dooit Extras
+[WIP] A collection of a items to customize your dooit!  
