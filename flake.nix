@@ -1,5 +1,5 @@
 {
-  description = "Flake for Dooit Bar Utils";
+  description = "Flake for Dooit Extras";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
@@ -12,7 +12,7 @@
   :
     flake-utils.lib.eachDefaultSystem (
       system: let
-        name = "dooit-bar-utils";
+        name = "dooit-extras";
         version = "0.1.0";
 
         pkgs = import nixpkgs {inherit system;};
@@ -42,7 +42,7 @@
 
         # Deps: Devshell
         devShell = pkgs.mkShell {
-          name = "dooit-bar-utils";
+          name = "dooit-extras";
           buildInputs =
             mainPkgs
             ++ (with pkgs; [
