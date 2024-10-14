@@ -48,6 +48,10 @@
             ++ (with pkgs; [
               bun
             ]);
+
+          shellHook = ''
+            ${pkgs.bun}/bin/bun install
+          '';
         };
       }
     );
