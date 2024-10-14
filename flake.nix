@@ -20,6 +20,7 @@
 
         mainPkgs = with python3; [
           textual
+          poetry-core
         ];
       in {
         packages.default = python3.buildPythonPackage {
@@ -28,8 +29,9 @@
           src = ./.;
           format = "pyproject";
 
-          # nativeBuildInputs = with pkgs; [
-          # ];
+          nativeBuildInputs = with pkgs; [
+            poetry
+          ];
 
           pythonRelaxDeps = [
             "textual"
