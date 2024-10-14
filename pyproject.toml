@@ -1,5 +1,5 @@
 [project]
-name = "dooit-bar-utils"
+name = "dooit-extras"
 version = "0.1.0"
 description = "Bar utils for Dooit"
 readme = "README.md"
