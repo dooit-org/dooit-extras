@@ -6,7 +6,7 @@ from dooit.api import Workspace
 from rich.text import Text
 from rich.style import Style
 
-from ..widget import BarUtilWidgetBase
+from ._base import BarUtilWidgetBase
 
 
 def get_completed(workspace: Workspace):

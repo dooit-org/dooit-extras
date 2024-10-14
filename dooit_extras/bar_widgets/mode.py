@@ -3,7 +3,7 @@ from typing import Dict
 from dooit.ui.tui import DooitThemeBase
 from rich.style import Style
 from rich.text import Text
-from ..widget import BarUtilWidgetBase
+from ._base import BarUtilWidgetBase
 from dooit.ui.api import DooitAPI
 from dooit.ui.api.events import subscribe
 from dooit.ui.events import ModeChanged
