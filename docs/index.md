@@ -2,18 +2,15 @@
 layout: home
 
 hero:
-  name: "Dooit Bar Utils"
-  tagline: "A collection of a lot of widgets various pre-customized bars for Dooit"
+  name: "Dooit Extras"
+  tagline: "A collection of a items to customize your dooit!"
   actions:
     - theme: brand
-      text: See Widgets
-      link: /introduction/widgets
-    - theme: brand
-      text: See Bars
-      link: /introduction/bars
+      text: Get Started
+      link: /introduction
     - theme: alt
       text: View on Github
-      link: https://www.github.com/dooit-org/dooit-bar-utils
+      link: https://www.github.com/dooit-org/dooit-extras
 ---
 
 ::: danger ALERT!
