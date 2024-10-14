@@ -1,15 +1,25 @@
-[project]
+[tool.poetry]
 name = "dooit-extras"
 version = "0.1.0"
-description = "Bar utils for Dooit"
+description = "A collection of a items to customize your dooit!"
+authors = ["kraanzu <kraanzu@gmail.com>"]
+license = "MIT"
 readme = "README.md"
-requires-python = ">=3.8.1"
-dependencies = [
-    "dooit",
-]
 
-[tool.setuptools]
-packages = { find = { exclude = ["node_modules"] } }
+[tool.poetry.dependencies]
+python = "^3.8.1"
+dooit = {git = "https://github.com/kraanzu/dooit.git", rev = "develop"}
 
-[tool.uv.sources]
-dooit = { git = "https://github.com/kraanzu/dooit", branch = "develop" }
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.9"
+pre-commit = "^3.2.2"
+textual-dev = "^1.6.1"
+pytest = "^8.3.2"
+coverage = "^7.6.1"
+pytest-asyncio = "^0.24.0"
+faker = "^29.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
