@@ -1,7 +1,7 @@
 from typing import Union
 from dooit.ui.api.events import subscribe
 from dooit.ui.api import DooitAPI
-from dooit.ui.events import WorkspaceSelected, TodoStatusChanged
+from dooit.ui.events import WorkspaceSelected, TodoEvent
 from dooit.api import Workspace
 from rich.text import Text
 from rich.style import Style
@@ -25,14 +25,14 @@ def get_completed(workspace: Workspace):
     return int(100 * complete_count / total_count)
 
 
-@subscribe(WorkspaceSelected, TodoStatusChanged)
+@subscribe(WorkspaceSelected, TodoEvent)
 def get_workspace_completion(
     api: DooitAPI,
-    event: Union[WorkspaceSelected, TodoStatusChanged],
+    event: Union[WorkspaceSelected, TodoEvent],
 ) -> str:
     if isinstance(event, WorkspaceSelected):
         workspace = event.workspace
-    elif isinstance(event, TodoStatusChanged):
+    elif isinstance(event, TodoEvent):
         workspace = api.app.workspace_tree.current_model
 
     return str(get_completed(workspace))
