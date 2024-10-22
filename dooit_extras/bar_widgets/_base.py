@@ -1,7 +1,7 @@
 from typing import Callable, Optional
 from dooit.ui.api import DooitAPI
 from dooit.ui.tui import DooitThemeBase
-from rich.style import Style, StyleType
+from rich.style import StyleType
 from rich.text import Text, TextType
 from dooit.ui.widgets.bars import StatusBarWidget
 
@@ -20,10 +20,7 @@ class BarUtilWidgetBase(StatusBarWidget):
         return self.api.vars.theme
 
     def rich_value(self) -> Text:
-        if isinstance(self.value, str):
-            return Text.from_markup(self.value)
-
-        return self.value
+        return Text.from_markup(self.value)
 
     def render_text(
         self, value: Optional[TextType] = None, style: StyleType = ""
