@@ -11,9 +11,10 @@ class BarUtilWidgetBase(StatusBarWidget):
     Base Widget for all Bar Utils Widgets
     """
 
-    def __init__(self, func: Callable, width: Optional[int], api: DooitAPI):
+    def __init__(self, func: Callable, width: Optional[int], api: DooitAPI, fmt="{}"):
         super().__init__(func, width)
         self.api = api
+        self.fmt = fmt
 
     @property
     def theme(self) -> DooitThemeBase:
@@ -21,6 +22,10 @@ class BarUtilWidgetBase(StatusBarWidget):
 
     def rich_value(self) -> Text:
         return Text.from_markup(self.value)
+
+    @property
+    def value(self) -> str:
+        return self.fmt.format(super().value)
 
     def render_text(
         self, value: Optional[TextType] = None, style: StyleType = ""

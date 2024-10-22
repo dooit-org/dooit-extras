@@ -34,13 +34,16 @@ class Mode(BarUtilWidgetBase):
     Mode Bar Widget to show mode
     """
 
-    def __init__(self, api: DooitAPI, mode_styles: Dict[str, Style] = {}) -> None:
-        super().__init__(func=get_mode, width=None, api=api)
+    def __init__(
+        self,
+        api: DooitAPI,
+        fmt=" {} ",
+        mode_styles: Dict[str, Style] = {},
+    ) -> None:
+        super().__init__(func=get_mode, width=None, api=api, fmt=fmt)
 
         self.mode_styles = get_default_mode_styles(api.app.current_theme) | mode_styles
 
     def render(self) -> Text:
         style = self.mode_styles[self.value]
-        rich_value = self.rich_value()
-        rich_value.pad(1)
-        return self.render_text(rich_value, style=style)
+        return self.render_text(style=style)

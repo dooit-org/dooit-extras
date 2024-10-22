@@ -39,8 +39,8 @@ def get_workspace_completion(
 
 
 class WorkspaceProgress(BarUtilWidgetBase):
-    def __init__(self, api: DooitAPI, fg: str = "", bg: str = "") -> None:
-        super().__init__(func=get_workspace_completion, width=None, api=api)
+    def __init__(self, api: DooitAPI, fmt="{}", fg: str = "", bg: str = "") -> None:
+        super().__init__(func=get_workspace_completion, width=None, api=api, fmt=fmt)
 
         self.fg = fg
         self.bg = bg
@@ -53,4 +53,5 @@ class WorkspaceProgress(BarUtilWidgetBase):
         rich_value = self.rich_value()
         if rich_value:
             rich_value.pad(1)
+
         return self.render_text(rich_value, style=style)
