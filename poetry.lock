@@ -336,10 +336,8 @@ tzlocal = "2.1"
 extras = ["dooit-extras @ git+https://github.com/dooit-org/dooit-extras.git"]
 
 [package.source]
-type = "git"
-url = "https://github.com/kraanzu/dooit.git"
-reference = "develop"
-resolved_reference = "e4f6d367e397a36133854b2e442f4c7d35f979e0"
+type = "directory"
+url = "../dooit"
 
 [[package]]
 name = "exceptiongroup"
@@ -1658,4 +1656,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8.1"
-content-hash = "41951f42f54dbb6cc979ee1b889454c4e8990577fc486ac9bb4419b7e419da05"
+content-hash = "b5b87d31d8356a0c9c8a4edd7edc77fc7ddcd345d5506a2257ff664d7ac91b18"
