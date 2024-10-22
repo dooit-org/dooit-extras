@@ -8,18 +8,23 @@ from rich.style import Style
 from ._base import BarUtilWidgetBase
 
 
-@subscribe(WorkspaceSelected, Startup)
-def get_workspace_name(_: DooitAPI, event: Union[WorkspaceSelected, Startup]) -> str:
-    if isinstance(event, Startup):
-        return ""
+def get_workspace_name_wrapper(no_workspace_text: str):
+    @subscribe(WorkspaceSelected, Startup)
+    def get_workspace_name(
+        _: DooitAPI, event: Union[WorkspaceSelected, Startup]
+    ) -> str:
+        if isinstance(event, Startup):
+            return no_workspace_text
 
-    text = event.workspace.description
-    parent = event.workspace.parent_workspace
+        text = event.workspace.description
+        parent = event.workspace.parent_workspace
 
-    if parent and not parent.is_root:
-        text = f"{parent.description} / {text}"
+        if parent and not parent.is_root:
+            text = f"{parent.description}/{text}"
 
-    return text
+        return text
+
+    return get_workspace_name
 
 
 class CurrentWorkspace(BarUtilWidgetBase):
@@ -31,16 +36,15 @@ class CurrentWorkspace(BarUtilWidgetBase):
         fg: str = "",
         bg: str = "",
     ) -> None:
-        super().__init__(func=get_workspace_name, api=api, width=None, fmt=fmt)
+        super().__init__(
+            func=get_workspace_name_wrapper(no_workspace_text),
+            api=api,
+            width=None,
+            fmt=fmt,
+        )
 
         self.fg = fg
         self.bg = bg
-        self.no_workspace_text = no_workspace_text
-
-    @property
-    def value(self) -> str:
-        value = super().value if super().value.strip() else self.no_workspace_text
-        return self.fmt.format(value)
 
     def render(self) -> Text:
         fg = self.fg or self.api.app.current_theme.background_1
