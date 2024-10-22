@@ -50,4 +50,7 @@ class WorkspaceProgress(BarUtilWidgetBase):
         bg = self.bg or self.api.app.current_theme.primary
         style = Style(color=fg, bgcolor=bg)
 
-        return self.render_text(style=style)
+        rich_value = self.rich_value()
+        if rich_value:
+            rich_value.pad(1)
+        return self.render_text(rich_value, style=style)

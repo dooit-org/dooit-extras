@@ -41,4 +41,6 @@ class Mode(BarUtilWidgetBase):
 
     def render(self) -> Text:
         style = self.mode_styles[self.value]
-        return self.render_text(style=style)
+        rich_value = self.rich_value()
+        rich_value.pad(1)
+        return self.render_text(rich_value, style=style)
