@@ -339,7 +339,7 @@ extras = ["dooit-extras @ git+https://github.com/dooit-org/dooit-extras.git"]
 type = "git"
 url = "https://github.com/kraanzu/dooit.git"
 reference = "develop"
-resolved_reference = "de5310c8dc41a3b4434b9b475d8df0a48e5c868c"
+resolved_reference = "f8fd607527ba95f5c70b05e59e455fcf71672b4e"
 
 [[package]]
 name = "exceptiongroup"
