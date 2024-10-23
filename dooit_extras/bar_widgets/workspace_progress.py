@@ -3,9 +3,6 @@ from dooit.ui.api.events import subscribe
 from dooit.ui.api import DooitAPI
 from dooit.ui.events import WorkspaceSelected, TodoEvent
 from dooit.api import Workspace
-from rich.text import Text
-from rich.style import Style
-
 from ._base import BarUtilWidgetBase
 
 
@@ -40,18 +37,6 @@ def get_workspace_completion(
 
 class WorkspaceProgress(BarUtilWidgetBase):
     def __init__(self, api: DooitAPI, fmt="{}", fg: str = "", bg: str = "") -> None:
-        super().__init__(func=get_workspace_completion, width=None, api=api, fmt=fmt)
-
-        self.fg = fg
-        self.bg = bg
-
-    def render(self) -> Text:
-        fg = self.fg or self.api.app.current_theme.background_1
-        bg = self.bg or self.api.app.current_theme.primary
-        style = Style(color=fg, bgcolor=bg)
-
-        rich_value = self.rich_value()
-        if rich_value:
-            rich_value.pad(1)
-
-        return self.render_text(rich_value, style=style)
+        super().__init__(
+            func=get_workspace_completion, width=None, api=api, fmt=fmt, fg=fg, bg=bg
+        )

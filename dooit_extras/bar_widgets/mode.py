@@ -50,3 +50,6 @@ class Mode(BarUtilWidgetBase):
             width=None,
             api=api,
         )
+
+    def render(self) -> Text:
+        return self.rich_value()

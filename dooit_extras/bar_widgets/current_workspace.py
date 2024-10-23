@@ -2,9 +2,6 @@ from typing import Union
 from dooit.ui.api import DooitAPI
 from dooit.ui.api.events import subscribe
 from dooit.ui.events.events import Startup, WorkspaceSelected
-from rich.text import Text
-from rich.style import Style
-
 from ._base import BarUtilWidgetBase
 
 
@@ -45,10 +42,3 @@ class CurrentWorkspace(BarUtilWidgetBase):
 
         self.fg = fg
         self.bg = bg
-
-    def render(self) -> Text:
-        fg = self.fg or self.api.app.current_theme.background_1
-        bg = self.bg or self.api.app.current_theme.primary
-        style = Style(color=fg, bgcolor=bg)
-
-        return self.render_text(style=style)

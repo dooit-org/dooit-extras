@@ -1,7 +1,7 @@
 from typing import Callable, Optional
 from dooit.ui.api import DooitAPI
 from dooit.ui.tui import DooitThemeBase
-from rich.style import StyleType
+from rich.style import Style, StyleType
 from rich.text import Text, TextType
 from dooit.ui.widgets.bars import StatusBarWidget
 
@@ -11,10 +11,20 @@ class BarUtilWidgetBase(StatusBarWidget):
     Base Widget for all Bar Utils Widgets
     """
 
-    def __init__(self, func: Callable, width: Optional[int], api: DooitAPI, fmt="{}"):
+    def __init__(
+        self,
+        func: Callable,
+        width: Optional[int],
+        api: DooitAPI,
+        fmt="{}",
+        fg: str = "",
+        bg: str = "",
+    ) -> None:
         super().__init__(func, width)
         self.api = api
         self.fmt = fmt
+        self.fg = fg
+        self.bg = bg
 
     @property
     def theme(self) -> DooitThemeBase:
@@ -40,4 +50,8 @@ class BarUtilWidgetBase(StatusBarWidget):
         return value
 
     def render(self) -> Text:
-        return self.rich_value()
+        fg = self.fg or self.api.app.current_theme.background_1
+        bg = self.bg or self.api.app.current_theme.primary
+        style = Style(color=fg, bgcolor=bg)
+
+        return self.render_text(style=style)

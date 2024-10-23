@@ -1,9 +1,6 @@
 from time import time
 from dooit.ui.api import DooitAPI
 from dooit.ui.api.events import timer
-from rich.text import Text
-from rich.style import Style
-
 from ._base import BarUtilWidgetBase
 
 
@@ -103,10 +100,3 @@ class Ticker(BarUtilWidgetBase):
         # set keybinds
         self.api.keys.set(resume_key, self.counter.start)
         self.api.keys.set(stop_key, self.counter.stop)
-
-    def render(self) -> Text:
-        fg = self.fg or self.api.app.current_theme.background_1
-        bg = self.bg or self.api.app.current_theme.primary
-        style = Style(color=fg, bgcolor=bg)
-
-        return self.render_text(style=style)

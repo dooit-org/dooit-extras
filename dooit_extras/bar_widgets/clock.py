@@ -1,9 +1,6 @@
 from datetime import datetime
 from dooit.ui.api import DooitAPI
 from dooit.ui.api.events import timer
-from rich.text import Text
-from rich.style import Style
-
 from ._base import BarUtilWidgetBase
 
 
@@ -24,14 +21,6 @@ class Clock(BarUtilWidgetBase):
         fg: str = "",
         bg: str = "",
     ) -> None:
-        super().__init__(func=get_clock_wrapper(format), width=None, api=api, fmt=fmt)
-
-        self.fg = fg
-        self.bg = bg
-
-    def render(self) -> Text:
-        fg = self.fg or self.api.app.current_theme.background_1
-        bg = self.bg or self.api.app.current_theme.primary
-        style = Style(color=fg, bgcolor=bg)
-
-        return self.render_text(style=style)
+        super().__init__(
+            func=get_clock_wrapper(format), width=None, api=api, fmt=fmt, fg=fg, bg=bg
+        )
