@@ -32,6 +32,7 @@ export default defineConfig({
       {
         text: 'Built-in Widgets',
         items: [
+          { text: 'Clock', link: '/widgets/clock' },
           { text: 'Mode', link: '/widgets/mode' },
           { text: 'Workspace Progress', link: '/widgets/workspace_progress' },
         ]
