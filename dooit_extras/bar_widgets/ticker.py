@@ -38,6 +38,7 @@ class Counter:
         self._start_time = None
         self._elapsed_time = 0
         self._running = False
+        self._start_flag = False
 
     def current_count(self) -> float:
         if self._running and self._start_time:
@@ -62,7 +63,7 @@ class Counter:
 
 
 def get_ticker_wrapper(counter: Counter, paused_text: str, default_text: str):
-    @timer(1)
+    @timer(0.2)
     def get_ticker(*_) -> str:
         if counter._start_flag:
             if counter.is_paused():
