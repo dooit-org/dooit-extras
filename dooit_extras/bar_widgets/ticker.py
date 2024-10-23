@@ -45,16 +45,16 @@ class Counter:
         return int(self._elapsed_time)
 
 
-def get_ticker_wrapper(counter: Counter):
+def get_ticker_wrapper(counter: Counter, paused_text: str, default_text: str):
     @timer(1)
     def get_ticker(*_) -> str:
         if counter._start_flag:
             if counter.is_paused():
-                return "Paused"
+                return paused_text
             else:
                 return str(counter.current_count())
         else:
-            return "No Timers"
+            return default_text
 
     return get_ticker
 
@@ -63,6 +63,10 @@ class Ticker(BarUtilWidgetBase):
     def __init__(
         self,
         api: DooitAPI,
+        resume_key: str = "s",
+        stop_key: str = "S",
+        paused_text: str = "Paused",
+        default_text: str = "No Timers",
         fmt: str = " {} ",
         fg: str = "",
         bg: str = "",
@@ -70,7 +74,7 @@ class Ticker(BarUtilWidgetBase):
         self.counter = Counter()
 
         super().__init__(
-            func=get_ticker_wrapper(self.counter),
+            func=get_ticker_wrapper(self.counter, paused_text, default_text),
             width=None,
             api=api,
             fmt=fmt,
@@ -80,8 +84,8 @@ class Ticker(BarUtilWidgetBase):
         self.bg = bg
 
         # set keybinds
-        self.api.keys.set("s", self.counter.start)
-        self.api.keys.set("S", self.counter.stop)
+        self.api.keys.set(resume_key, self.counter.start)
+        self.api.keys.set(stop_key, self.counter.stop)
 
     def render(self) -> Text:
         fg = self.fg or self.api.app.current_theme.background_1
