@@ -33,7 +33,14 @@ export default defineConfig({
         text: 'Built-in Widgets',
         items: [
           { text: 'Clock', link: '/widgets/clock' },
+          { text: 'Current Workspace', link: '/widgets/current_workspace' },
+          { text: 'Date', link: '/widgets/date' },
           { text: 'Mode', link: '/widgets/mode' },
+          { text: 'Powerline', link: '/widgets/powerline' },
+          { text: 'Spacer', link: '/widgets/spacer' },
+          { text: 'TextBox', link: '/widgets/text_box' },
+          { text: 'TextPoller', link: '/widgets/text_poller' },
+          { text: 'Ticker', link: '/widgets/ticker' },
           { text: 'Workspace Progress', link: '/widgets/workspace_progress' },
         ]
       },
