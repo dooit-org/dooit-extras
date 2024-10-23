@@ -17,7 +17,7 @@ class TextBox(BarUtilWidgetBase):
         self,
         api: DooitAPI,
         text: str,
-        fmt: str = " {} ",
+        fmt: str = "{}",
         fg: str = "",
         bg: str = "",
     ) -> None:
