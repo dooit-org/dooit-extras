@@ -294,5 +294,5 @@ dist
 .pnp.*
 
 # Vite Press
-docs/.vitepress/dist
-docs/.vitepress/cache
+site/docs/.vitepress/dist
+site/docs/.vitepress/cache
