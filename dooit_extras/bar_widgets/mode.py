@@ -9,24 +9,29 @@ from dooit.ui.api.events import subscribe
 from dooit.ui.events import ModeChanged
 
 
-@subscribe(ModeChanged)
-def get_mode(api: DooitAPI, _: ModeChanged):
-    return api.app._mode
+def get_mode_wrapper(mode_styles: Dict[str, Style], fmt: str):
+    def get_default_mode_styles(theme: DooitThemeBase) -> Dict[str, Style]:
+        fg = theme.background_1
+        modes = defaultdict(lambda: Style(color=fg, bgcolor=theme.primary))
 
+        extra_styles = dict(
+            NORMAL=Style(color=fg, bgcolor=theme.primary),
+            INSERT=Style(color=fg, bgcolor=theme.secondary),
+        )
 
-def get_default_mode_styles(theme: DooitThemeBase) -> Dict[str, Style]:
-    fg = theme.background_1
-    modes = defaultdict(lambda: Style(color=fg, bgcolor=theme.primary))
+        for mode, style in extra_styles.items():
+            modes[mode] = style
 
-    extra_styles = dict(
-        NORMAL=Style(color=fg, bgcolor=theme.primary),
-        INSERT=Style(color=fg, bgcolor=theme.secondary),
-    )
+        return modes
 
-    for mode, style in extra_styles.items():
-        modes[mode] = style
+    @subscribe(ModeChanged)
+    def get_mode(api: DooitAPI, _: ModeChanged):
+        mode = api.app._mode
+        styles_dict = get_default_mode_styles(api.vars.theme) | mode_styles
 
-    return modes
+        return Text(fmt.format(mode), style=styles_dict[mode])
+
+    return get_mode
 
 
 class Mode(BarUtilWidgetBase):
@@ -40,10 +45,8 @@ class Mode(BarUtilWidgetBase):
         fmt=" {} ",
         mode_styles: Dict[str, Style] = {},
     ) -> None:
-        super().__init__(func=get_mode, width=None, api=api, fmt=fmt)
-
-        self.mode_styles = get_default_mode_styles(api.app.current_theme) | mode_styles
-
-    def render(self) -> Text:
-        style = self.mode_styles[self.value]
-        return self.render_text(style=style)
+        super().__init__(
+            func=get_mode_wrapper(mode_styles, fmt),
+            width=None,
+            api=api,
+        )

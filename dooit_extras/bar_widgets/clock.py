@@ -7,9 +7,12 @@ from rich.style import Style
 from ._base import BarUtilWidgetBase
 
 
-@timer(1)
-def get_clock(api: DooitAPI, *_) -> str:
-    return ""
+def get_clock_wrapper(format: str):
+    @timer(1)
+    def get_clock(*_) -> str:
+        return datetime.now().strftime(format)
+
+    return get_clock
 
 
 class Clock(BarUtilWidgetBase):
@@ -21,15 +24,10 @@ class Clock(BarUtilWidgetBase):
         fg: str = "",
         bg: str = "",
     ) -> None:
-        super().__init__(func=lambda: None, width=None, api=api, fmt=fmt)
+        super().__init__(func=get_clock_wrapper(format), width=None, api=api, fmt=fmt)
 
-        self.format = format
         self.fg = fg
         self.bg = bg
-
-    @property
-    def value(self) -> str:
-        return self.fmt.format(datetime.now().strftime(self.format))
 
     def render(self) -> Text:
         fg = self.fg or self.api.app.current_theme.background_1
