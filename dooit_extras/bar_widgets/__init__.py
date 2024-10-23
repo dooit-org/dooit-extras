@@ -5,6 +5,7 @@ from .clock import Clock
 from .date import Date
 from .current_workspace import CurrentWorkspace
 from .text_box import TextBox
+from .ticker import Ticker
 
 
 __all__ = [
@@ -15,4 +16,5 @@ __all__ = [
     "Date",
     "CurrentWorkspace",
     "TextBox",
+    "Ticker",
 ]
