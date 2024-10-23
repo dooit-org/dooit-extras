@@ -39,10 +39,26 @@ class Counter:
         self._elapsed_time = 0
         self._running = False
 
-    def current_count(self) -> int:
+    def current_count(self) -> float:
         if self._running and self._start_time:
-            return int(self._elapsed_time + (time() - self._start_time))
-        return int(self._elapsed_time)
+            return self._elapsed_time + (time() - self._start_time)
+        return self._elapsed_time
+
+    def format_hms(self):
+        """Converts the current count to h m s format."""
+
+        total_seconds = int(self.current_count())
+        hours, remainder = divmod(total_seconds, 3600)
+        minutes, seconds = divmod(remainder, 60)
+
+        parts = []
+        if hours > 0:
+            parts.append(f"{hours}h")
+        if minutes > 0:
+            parts.append(f"{minutes}m")
+        parts.append(f"{seconds}s")
+
+        return " ".join(parts)
 
 
 def get_ticker_wrapper(counter: Counter, paused_text: str, default_text: str):
@@ -52,7 +68,7 @@ def get_ticker_wrapper(counter: Counter, paused_text: str, default_text: str):
             if counter.is_paused():
                 return paused_text
             else:
-                return str(counter.current_count())
+                return counter.format_hms()
         else:
             return default_text
 
