@@ -7,6 +7,7 @@ from .current_workspace import CurrentWorkspace
 from .text_box import TextBox
 from .ticker import Ticker
 from .text_poller import TextPoller
+from .powerline import Powerline
 
 
 __all__ = [
@@ -19,4 +20,5 @@ __all__ = [
     "TextBox",
     "Ticker",
     "TextPoller",
+    "Powerline",
 ]
