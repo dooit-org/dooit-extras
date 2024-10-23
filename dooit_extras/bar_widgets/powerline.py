@@ -9,7 +9,7 @@ class Powerline(TextBox):
         self,
         api: DooitAPI = DooitAPI(Dooit()),
         text: str = "",
-        fmt: str = " {} ",
+        fmt: str = "{}",
         fg: str = "",
         bg: str = "",
     ) -> None:
@@ -54,11 +54,11 @@ class Powerline(TextBox):
     # Ice
     @classmethod
     def left_ice(cls, api: DooitAPI, fg: str = "", bg: str = "") -> Self:
-        return cls(api, " ", fg=fg, bg=bg)
+        return cls(api, "", fg=fg, bg=bg)
 
     @classmethod
     def right_ice(cls, api: DooitAPI, fg: str = "", bg: str = "") -> Self:
-        return cls(api, " ", fg=fg, bg=bg)
+        return cls(api, "", fg=fg, bg=bg)
 
     # Fire
     @classmethod
