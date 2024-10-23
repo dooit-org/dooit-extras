@@ -320,7 +320,7 @@ description = "A TUI todo manager"
 optional = false
 python-versions = "^3.8.1"
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
 click = "^8.1.7"
@@ -336,10 +336,8 @@ tzlocal = "2.1"
 extras = ["dooit-extras @ git+https://github.com/dooit-org/dooit-extras.git"]
 
 [package.source]
-type = "git"
-url = "https://github.com/kraanzu/dooit.git"
-reference = "develop"
-resolved_reference = "3de3d7143a56ab667632469b14b7ee75d3db09f9"
+type = "directory"
+url = "../dooit"
 
 [[package]]
 name = "exceptiongroup"
@@ -1266,13 +1264,13 @@ files = [
 
 [[package]]
 name = "rich"
-version = "13.9.2"
+version = "13.9.3"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
 optional = false
 python-versions = ">=3.8.0"
 files = [
-    {file = "rich-13.9.2-py3-none-any.whl", hash = "sha256:8c82a3d3f8dcfe9e734771313e606b39d8247bb6b826e196f4914b333b743cf1"},
-    {file = "rich-13.9.2.tar.gz", hash = "sha256:51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"},
+    {file = "rich-13.9.3-py3-none-any.whl", hash = "sha256:9836f5096eb2172c9e77df411c1b009bace4193d6a481d534fea75ebba758283"},
+    {file = "rich-13.9.3.tar.gz", hash = "sha256:bc1e01b899537598cf02579d2b9f4a415104d3fc439313a7a2c165d76557a08e"},
 ]
 
 [package.dependencies]
@@ -1658,4 +1656,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8.1"
-content-hash = "41951f42f54dbb6cc979ee1b889454c4e8990577fc486ac9bb4419b7e419da05"
+content-hash = "23ab11a38256b0b0018772d6eb09ea11a26357cdfba1d3c75a52e71efa0fb4cd"
