@@ -13,6 +13,7 @@ class Powerline(TextBox):
         fg: str = "",
         bg: str = "",
     ) -> None:
+        bg = bg or api.vars.theme.background_2
         super().__init__(api, text, fmt, fg, bg)
 
     # Lower Triangles
