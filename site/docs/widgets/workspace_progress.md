@@ -2,10 +2,9 @@
 
 A widget to show current completion progress in percentage for a workspace
 
-| Key           |      Default      |  Description                                                                             |
-| ------------- | :---------------- | :----------------------------------------------------------------------------------------|
-| api           |                   | The api object provided within the function                                              |
-| mode_styles   |   {}              | A dictionary of key/value with key as `mode name` and value is a `Style` object          |
-| text_left     |   " "             | Text to pad left side with (used as seperator style, ex: `powerline stymbols`            |
-| text_right    |   " "             | Text to pad right side with (used as seperator style, ex: `powerline stymbols`           |
-| reverse_pads  |   True            | Whether to revsrse styling (fg/bg) on left/right texts                                   |
+| Key|<div style="width: 100px">Default</div> |Description|
+| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| api           |                     | The api object provided within the function                                              |
+| fmt           | `" {} "`            | Specify how the text should be formatted, `{}` represents the value that'll be displayed |
+| fg            | `theme.foreground_1`| Color to show the text in, defaults to `theme.foreground_1` or `white` based on theme    |
+| bg            | `theme.primary`     | Color to show the background in, defaults to `theme.primary` or `accent` based on theme  |

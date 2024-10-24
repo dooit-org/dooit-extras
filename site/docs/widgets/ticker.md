@@ -1,11 +1,14 @@
-# Clock
+# Ticker
 
-A widget to show current time
+A widget to show a timer
 
 | Key|<div style="width: 100px">Default</div> |Description|
-| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
-| api           |                     | The api object provided within the function                                              |
-| fmt           | `" {} "`            | A dictionary of key/value with key as `mode name` and value is a `Style` object          |
-| format        | `"%H:%M:%S"`        | Format to show the clock in, by default it shows in hh:mm:ss format                      |
-| fg            | `theme.foreground_1`| Color to show the text in, defaults to `theme.foreground_1` or `white` based on theme    |
-| bg            | `theme.primary`     | Color to show the background in, defaults to `theme.primary` or `accent` based on theme  |
+| ------------ | :----------------:  | :----------------------------------------------------------------------------------------|
+|api           |                     | The api object provided within the function                                              |
+|resume_key    | `"s"`               | Key to `start` or `resume` the timer to pause                                            |
+|stop_key      | `"S"`               | Key to `stop/pause` the timer. Stopping again will `reset` the timer                     |
+|paused_text   | `"Paused"`          | Text to show when the timer is paused                                                    |
+|default_text  | `"No Timers"`       | Default text to show for the timer widget. When the timer is reset, this text will show as well|
+|fmt           | `" {} "`            | Specify how the text should be formatted, `{}` represents the value that'll be displayed |
+|fg            | `theme.foreground_1`| Color to show the text in, defaults to `theme.foreground_1` or `white` based on theme    |
+|bg            | `theme.primary`     | Color to show the background in, defaults to `theme.primary` or `accent` based on theme  |
