@@ -8,6 +8,7 @@ from .text_box import TextBox
 from .ticker import Ticker
 from .text_poller import TextPoller
 from .powerline import Powerline
+from .platform import Platform
 
 
 __all__ = [
@@ -21,4 +22,5 @@ __all__ = [
     "Ticker",
     "TextPoller",
     "Powerline",
+    "Platform",
 ]
