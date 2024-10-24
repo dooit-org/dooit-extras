@@ -9,15 +9,17 @@ Widget store that provides various powerline separators
 | fg            | `theme.foreground_1`| Color to show the text in, defaults to `theme.foreground_1` or `white` based on theme    |
 | bg            | `theme.primary`     | Color to show the background in, defaults to `theme.primary` or `accent` based on theme  |
 
-## Lower Triangles
-
-## Upper Triangles
+## Triangles
+![Alt text](./imgs/powerline_triangles.png)
 
 ## Rounded
-![Alt text](./imgs/powerline_rounded_left.png)
+![Alt text](./imgs/powerline_rounded.png)
 
 ## Arrows
+![Alt text](./imgs/powerline_arrow.png)
 
 ## Ice
+![Alt text](./imgs/powerline_ice.png)
 
 ## Flame
+![Alt text](./imgs/powerline_flame.png)
