@@ -8,17 +8,28 @@ from .text_box import TextBox
 import platform
 import os
 
-ICONS = defaultdict(lambda: ("", "red"))
+
+class PlatformInfo:
+    def __init__(self, icon: str, color: str) -> None:
+        self.icon = icon
+        self.color = color
+
+    @classmethod
+    def default(cls) -> "PlatformInfo":
+        return cls("", "red")
+
+
+ICONS: defaultdict[str, PlatformInfo] = defaultdict(PlatformInfo.default)
 
 
 def get_user_platform(theme: DooitThemeBase, icon: bool) -> TextType:
     default_icons = {
-        "Windows": ("", theme.blue),
-        "macOS": ("", theme.foreground_3),
-        "Linux": ("", theme.yellow),
-        "NixOS": ("", theme.cyan),
-        "Arch Linux": ("", theme.blue),
-        "Ubuntu": ("", theme.orange),
+        "Windows": PlatformInfo("", theme.blue),
+        "macOS": PlatformInfo("", theme.foreground_3),
+        "Linux": PlatformInfo("", theme.yellow),
+        "NixOS": PlatformInfo("", theme.cyan),
+        "Arch Linux": PlatformInfo("", theme.blue),
+        "Ubuntu": PlatformInfo("", theme.orange),
     }
 
     ICONS.update(default_icons)
@@ -40,7 +51,11 @@ def get_user_platform(theme: DooitThemeBase, icon: bool) -> TextType:
 
     text = Text()
     if icon:
-        text.append(Text(ICONS[system][0], style=Style(color=ICONS[system][1])))
+        icon_info = ICONS[system]
+        text += Text(
+            icon_info.icon,
+            style=Style(color=icon_info.color),
+        )
 
     text.append(" " + system)
     return text
@@ -51,7 +66,7 @@ class Platform(TextBox):
         self,
         api: DooitAPI,
         icon: bool = True,
-        fmt: str = "{}",
+        fmt: str = " {} ",
         fg: str = "",
         bg: str = "",
     ) -> None:
