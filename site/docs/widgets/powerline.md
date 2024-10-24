@@ -14,7 +14,7 @@ Widget store that provides various powerline separators
 ## Upper Triangles
 
 ## Rounded
-![Alt text](/imgs/bar_widgets/powerline_rounded_left.png)
+![Alt text](./imgs/powerline_rounded_left.png)
 
 ## Arrows
 
