@@ -45,6 +45,7 @@ export default defineConfig({
           { text: 'Current Workspace', link: '/widgets/current_workspace' },
           { text: 'Date', link: '/widgets/date' },
           { text: 'Mode', link: '/widgets/mode' },
+          { text: 'Platform', link: '/widgets/platform' },
           { text: 'Powerline', link: '/widgets/powerline' },
           { text: 'Spacer', link: '/widgets/spacer' },
           { text: 'TextBox', link: '/widgets/text_box' },
