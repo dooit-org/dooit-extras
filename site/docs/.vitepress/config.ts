@@ -5,7 +5,14 @@ export default defineConfig({
   title: "Dooit Bar Utils",
   description: "Bar utils for Dooit",
   base: '/dooit-extras/',
+  lastUpdated: true,
   themeConfig: {
+    repo: 'dooit-org/dooit-extras',
+    docsDir: 'site/docs',
+    editLink: {
+      pattern: 'https://github.com/dooit-org/dooit-extras/edit/main/site/docs/:path',
+      text: 'Edit this page on GitHub'
+    },
     nav: [
       { text: "Home", link: "/" },
       { text: "Get Started", link: "/introduction" },
