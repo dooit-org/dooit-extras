@@ -43,13 +43,13 @@ export default defineConfig({
         items: [
           { text: 'Clock', link: '/widgets/clock' },
           { text: 'Current Workspace', link: '/widgets/current_workspace' },
+          { text: 'Custom', link: '/widgets/custom' },
           { text: 'Date', link: '/widgets/date' },
           { text: 'Mode', link: '/widgets/mode' },
           { text: 'Platform', link: '/widgets/platform' },
           { text: 'Powerline', link: '/widgets/powerline' },
           { text: 'Spacer', link: '/widgets/spacer' },
           { text: 'TextBox', link: '/widgets/text_box' },
-          { text: 'TextPoller', link: '/widgets/text_poller' },
           { text: 'Ticker', link: '/widgets/ticker' },
           { text: 'Workspace Progress', link: '/widgets/workspace_progress' },
         ]

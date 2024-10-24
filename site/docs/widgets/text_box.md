@@ -3,7 +3,7 @@
 A widget to show static Text
 
 ::: tip
-Check out [Text Poller](/widgets/text_poller) if you want dynamic texts
+Check out [Custom](/widgets/custom) if you want dynamic texts
 :::
 
 | Key|<div style="width: 100px">Default</div> |Description|

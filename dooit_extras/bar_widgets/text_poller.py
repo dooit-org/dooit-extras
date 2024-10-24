@@ -3,7 +3,7 @@ from dooit.ui.api import DooitAPI
 from ._base import BarUtilWidgetBase
 
 
-class TextPoller(BarUtilWidgetBase):
+class Custom(BarUtilWidgetBase):
     def __init__(
         self,
         api: DooitAPI,

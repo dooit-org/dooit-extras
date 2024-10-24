@@ -1,4 +1,4 @@
-# Text Poller
+# Custom
 
 A widget which which takes in a custom function to display text
 
@@ -11,7 +11,7 @@ A widget which which takes in a custom function to display text
 | bg            | `theme.primary`     | Color to show the background in, defaults to `theme.primary` or `accent` based on theme  |
 
 ```python
-from dooit_extras.bar_widgets import TextPoller
+from dooit_extras.bar_widgets import Custom
 from dooit.ui.api.events import subscribe, timer, Startup, TodoEvent
 from dooit.ui.api import DooitAPI
 
@@ -28,8 +28,8 @@ def setup(api, _):
     api.bar.set( 
         [
             # ....
-            TextPoller(api, function = alert_todo_event),
-            TextPoller(api, function = my_timer),
+            Custom(api, function = alert_todo_event),
+            Custom(api, function = my_timer),
             # ....
         ]
     )

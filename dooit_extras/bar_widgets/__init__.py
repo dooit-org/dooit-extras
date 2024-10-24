@@ -6,7 +6,7 @@ from .date import Date
 from .current_workspace import CurrentWorkspace
 from .text_box import TextBox
 from .ticker import Ticker
-from .text_poller import TextPoller
+from .text_poller import Custom
 from .powerline import Powerline
 from .platform import Platform
 
@@ -20,7 +20,7 @@ __all__ = [
     "CurrentWorkspace",
     "TextBox",
     "Ticker",
-    "TextPoller",
+    "Custom",
     "Powerline",
     "Platform",
 ]
