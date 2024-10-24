@@ -31,6 +31,8 @@ export default defineConfig({
 
       {
         text: 'Built-in Widgets',
+        collapsible: true,
+        collapsed: true,
         items: [
           { text: 'Clock', link: '/widgets/clock' },
           { text: 'Current Workspace', link: '/widgets/current_workspace' },
@@ -47,6 +49,8 @@ export default defineConfig({
 
       {
         text: 'Built-in Bars',
+        collapsible: true,
+        collapsed: true,
         items: [
           { text: 'Default', link: '/bars/default' },
         ]
