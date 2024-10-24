@@ -10,19 +10,20 @@ A widget to show current mode (`NORMAL/INSERT/...` etc) of the app
 
 ```python
 from dooit_extras.bar_widgets import Mode
+from dooit.ui.api.events import subscribe, Startup
 
-theme = api.vars.theme
-
-mode_styles = {
-    "NORMAL": theme.primary,
-    "INSERT": theme.secondary,
-}
-
-api.bar.set( 
-    [
-        # ....
-        Mode(api, mode_styles = mode_styles)
-        # ....
-    ]
-)
+@subscribe(Startup)
+def setup(api, _):
+    theme = api.vars.theme
+    mode_styles = {
+        "NORMAL": theme.primary,
+        "INSERT": theme.secondary,
+    }
+    api.bar.set( 
+        [
+            # ....
+            Mode(api, mode_styles = mode_styles)
+            # ....
+        ]
+    )
 ```

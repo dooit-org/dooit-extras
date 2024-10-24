@@ -18,12 +18,15 @@ Check out [Text Poller](/widgets/text_poller) if you want dynamic texts
 
 ```python
 from dooit_extras.bar_widgets import TextBox
+from dooit.ui.api.events import subscribe, Startup
 
-api.bar.set( 
-    [
-        # ....
-        TextBox(api, text = "Your text here!"),
-        # ....
-    ]
-)
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set( 
+        [
+            # ....
+            TextBox(api, text = "Your text here!"),
+            # ....
+        ]
+    )
 ```

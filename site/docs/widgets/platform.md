@@ -17,12 +17,15 @@ If your system does not have an icon, feel free to [open an issue](https://githu
 
 ```python
 from dooit_extras.bar_widgets import Platform
+from dooit.ui.api.events import subscribe, Startup
 
-api.bar.set( 
-    [
-        # ....
-        Platform(api),
-        # ....
-    ]
-)
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set( 
+        [
+            # ....
+            Platform(api),
+            # ....
+        ]
+    )
 ```

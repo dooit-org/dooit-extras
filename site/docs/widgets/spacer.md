@@ -13,13 +13,16 @@ A widget to add padding between widgets!
 
 ```python
 from dooit_extras.bar_widgets import Spacer
+from dooit.ui.api.events import subscribe, Startup
 
-api.bar.set( 
-    [
-        # ....
-        Spacer(api, width = 0), # takes all the space
-        Spacer(api, width = 20), # takes 20 blocks worth of space
-        # ....
-    ]
-)
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set( 
+        [
+            # ....
+            Spacer(api, width = 0), # takes all the space
+            Spacer(api, width = 20), # takes 20 blocks worth of space
+            # ....
+        ]
+    )
 ```

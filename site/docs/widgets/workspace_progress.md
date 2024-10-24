@@ -13,12 +13,15 @@ A widget to show current completion progress in percentage for a workspace
 
 ```python
 from dooit_extras.bar_widgets import WorkspaceProgress
+from dooit.ui.api.events import subscribe, Startup
 
-api.bar.set( 
-    [
-        # ....
-        WorkspaceProgress(api),
-        # ....
-    ]
-)
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set( 
+        [
+            # ....
+            WorkspaceProgress(api),
+            # ....
+        ]
+    )
 ```

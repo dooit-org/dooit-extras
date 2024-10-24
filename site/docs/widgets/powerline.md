@@ -18,16 +18,21 @@ Widget store that provides various powerline separators
 
 ```python
 from dooit_extras.bar_widgets import Powerline
+from dooit.ui.api.events import subscribe, Startup
 
-bar_widgets = [
-    # ...
-    Powerline.lower_left_triangle(...),
-    Powerline.lower_right_triangle(...),
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set(
+        [
+            # ...
+            Powerline.lower_left_triangle(...),
+            Powerline.lower_right_triangle(...),
 
-    Powerline.upper_left_triangle(...),
-    Powerline.upper_right_triangle(...),
-    # ...
-]
+            Powerline.upper_left_triangle(...),
+            Powerline.upper_right_triangle(...),
+            # ...
+        ]
+    )
 ```
 
 ::: info
@@ -39,50 +44,70 @@ The preview image for triangles was created with a combination of different tria
 
 ```python
 from dooit_extras.bar_widgets import Powerline
+from dooit.ui.api.events import subscribe, Startup
 
-bar_widgets = [
-    # ...
-    Powerline.left_rounded(...),
-    Powerline.right_rounded(...),
-    # ...
-]
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set(
+        [
+            # ...
+            Powerline.left_rouned(...),
+            Powerline.right_rounded(...),
+            # ...
+        ]
+    )
 ```
 
 ## Arrows
 ![Alt text](./imgs/powerline_arrow.png)
 ```python
 from dooit_extras.bar_widgets import Powerline
+from dooit.ui.api.events import subscribe, Startup
 
-bar_widgets = [
-    # ...
-    Powerline.left_arrow(...),
-    Powerline.right_arrow(...),
-    # ...
-]
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set(
+        [
+            # ...
+            Powerline.left_arrow(...),
+            Powerline.right_arrow(...),
+            # ...
+        ]
+    )
 ```
 
 ## Ice
 ![Alt text](./imgs/powerline_ice.png)
 ```python
 from dooit_extras.bar_widgets import Powerline
+from dooit.ui.api.events import subscribe, Startup
 
-bar_widgets = [
-    # ...
-    Powerline.left_ice(...),
-    Powerline.right_ice(...),
-    # ...
-]
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set(
+        [
+            # ...
+            Powerline.left_ice(...),
+            Powerline.right_ice(...),
+            # ...
+        ]
+    )
 ```
 
 ## Flame
 ![Alt text](./imgs/powerline_flame.png)
 ```python
 from dooit_extras.bar_widgets import Powerline
+from dooit.ui.api.events import subscribe, Startup
 
-bar_widgets = [
-    # ...
-    Powerline.left_flame(...),
-    Powerline.right_flame(...),
-    # ...
-]
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set(
+        [
+            # ...
+            Powerline.left_flame(...),
+            Powerline.right_flame(...),
+            # ...
+        ]
+    )
 ```

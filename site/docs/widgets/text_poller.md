@@ -12,8 +12,7 @@ A widget which which takes in a custom function to display text
 
 ```python
 from dooit_extras.bar_widgets import TextPoller
-from dooit.ui.api.events import subscribe, timer
-from dooit.ui.events import TodoEvent
+from dooit.ui.api.events import subscribe, timer, Startup, TodoEvent
 from dooit.ui.api import DooitAPI
 
 @subscribe(TodoEvent)
@@ -24,12 +23,14 @@ def alert_todo_event(api: DooitAPI, event: TodoEvent):
 def my_timer(api: DooitAPI, _):
     # ...
 
-api.bar.set( 
-    [
-        # ....
-        TextPoller(api, function = alert_todo_event),
-        TextPoller(api, function = my_timer),
-        # ....
-    ]
-)
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set( 
+        [
+            # ....
+            TextPoller(api, function = alert_todo_event),
+            TextPoller(api, function = my_timer),
+            # ....
+        ]
+    )
 ```

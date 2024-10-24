@@ -19,12 +19,16 @@ Check out [strfmt time cheetsheat](https://strftime.org/) for formats
 
 ```python
 from dooit_extras.bar_widgets import Date
+from dooit_extras.bar_widgets import CurrentWorkspace
+from dooit.ui.api.events import subscribe, Startup
 
-api.bar.set( 
-    [
-        # ....
-        Date(api),
-        # ....
-    ]
-)
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set( 
+        [
+            # ....
+            Date(api),
+            # ....
+        ]
+    )
 ```

@@ -17,18 +17,21 @@ A widget to show a timer
 
 ```python
 from dooit_extras.bar_widgets import Ticker
+from dooit.ui.api.events import subscribe, Startup
 
-api.bar.set( 
-    [
-        # ....
-        Ticker(
-            api,
-            resume_key = "s",
-            stop_key = "S",
-            paused_text = "Paused",
-            default_text = "No Timers",
-        )
-        # ....
-    ]
-)
+@subscribe(Startup)
+def setup(api, _):
+    api.bar.set( 
+        [
+            # ....
+            Ticker(
+                api,
+                resume_key = "s",
+                stop_key = "S",
+                paused_text = "Paused",
+                default_text = "No Timers",
+            )
+            # ....
+        ]
+    )
 ```
