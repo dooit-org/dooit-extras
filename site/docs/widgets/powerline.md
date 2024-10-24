@@ -17,7 +17,7 @@ Widget store that provides various powerline separators
 ![Alt text](./imgs/powerline_triangles.png)
 
 ```python
-from dooit_extras.bar_widgets import *
+from dooit_extras.bar_widgets import Powerline
 
 bar_widgets = [
     # ...
@@ -38,7 +38,7 @@ The preview image for triangles was created with a combination of different tria
 ![Alt text](./imgs/powerline_rounded.png)
 
 ```python
-from dooit_extras.bar_widgets import *
+from dooit_extras.bar_widgets import Powerline
 
 bar_widgets = [
     # ...
@@ -51,7 +51,7 @@ bar_widgets = [
 ## Arrows
 ![Alt text](./imgs/powerline_arrow.png)
 ```python
-from dooit_extras.bar_widgets import *
+from dooit_extras.bar_widgets import Powerline
 
 bar_widgets = [
     # ...
@@ -64,7 +64,7 @@ bar_widgets = [
 ## Ice
 ![Alt text](./imgs/powerline_ice.png)
 ```python
-from dooit_extras.bar_widgets import *
+from dooit_extras.bar_widgets import Powerline
 
 bar_widgets = [
     # ...
@@ -77,7 +77,7 @@ bar_widgets = [
 ## Flame
 ![Alt text](./imgs/powerline_flame.png)
 ```python
-from dooit_extras.bar_widgets import *
+from dooit_extras.bar_widgets import Powerline
 
 bar_widgets = [
     # ...
