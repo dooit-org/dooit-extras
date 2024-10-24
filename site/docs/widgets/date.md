@@ -14,3 +14,17 @@ A widget to show today's date
 Check out [strfmt time cheetsheat](https://strftime.org/) for formats
 :::
 
+
+## Usage
+
+```python
+from dooit_extras.bar_widgets import Date
+
+api.bar.set( 
+    [
+        # ....
+        Date(api),
+        # ....
+    ]
+)
+```

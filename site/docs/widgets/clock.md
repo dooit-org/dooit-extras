@@ -14,3 +14,17 @@ A widget to show current time
 Check out [strfmt time cheetsheat](https://strftime.org/) for formats
 :::
 
+
+## Usage
+
+```python
+from dooit_extras.bar_widgets import Clock
+
+api.bar.set( 
+    [
+        # ....
+        Clock(api),
+        # ....
+    ]
+)
+```

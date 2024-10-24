@@ -12,3 +12,17 @@ A widget to show the current OS platform!
 ::: tip
 If your system does not have an icon, feel free to [open an issue](https://github.com/dooit-org/dooit-extras/issues/new) :D
 :::
+
+## Usage
+
+```python
+from dooit_extras.bar_widgets import Platform
+
+api.bar.set( 
+    [
+        # ....
+        Platform(api),
+        # ....
+    ]
+)
+```
