@@ -1,6 +1,9 @@
+from typing import Optional
+from rich.style import Style
+from dooit.api.todo import datetime, Todo
+from dooit.ui.api import DooitAPI
 from rich.style import Style
 from rich.text import Text
-from dooit.api import Todo
 from dooit.ui.api import DooitAPI, allow_multiple_formatting
 import re
 
@@ -13,7 +16,7 @@ url_pattern = re.compile(
 
 
 @allow_multiple_formatting
-def highlight_link(value: str, todo: Todo, api: DooitAPI):
+def description_highlight_link(value: str, _: Todo, api: DooitAPI):
     text = Text.from_markup(value)
     text.highlight_regex(
         url_pattern,
@@ -26,14 +29,8 @@ def highlight_link(value: str, todo: Todo, api: DooitAPI):
 
     return text.markup
 
-from typing import Optional
-from rich.style import Style
-from rich.text import Text
-from dooit.api.todo import datetime, Todo
-from dooit.ui.api import DooitAPI
 
-
-def causal_date_format(due: Optional[datetime], _: Todo) -> str:
+def due_causal_format(due: Optional[datetime], _: Todo) -> str:
     if not due:
         return ""
 
@@ -49,7 +46,7 @@ def causal_date_format(due: Optional[datetime], _: Todo) -> str:
     return due.strftime(dt_format)
 
 
-def danger_today(due: Optional[datetime], _: Todo, api: DooitAPI) -> Optional[str]:
+def due_danger_today(due: Optional[datetime], _: Todo, api: DooitAPI) -> Optional[str]:
     if not due:
         return ""
 
