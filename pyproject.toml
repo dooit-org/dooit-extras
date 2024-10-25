@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "dooit-extras"
 version = "0.1.0"
-description = "A collection of a items to customize your dooit!"
+description = "A collection of items to customize your dooit!"
 authors = ["kraanzu <kraanzu@gmail.com>"]
 license = "MIT"
 readme = "README.md"

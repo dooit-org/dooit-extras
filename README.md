@@ -1,2 +1,2 @@
 # Dooit Extras
-[WIP] A collection of a items to customize your dooit!  
+[WIP] A collection of items to customize your dooit!  

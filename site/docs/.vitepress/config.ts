@@ -2,8 +2,8 @@ import { defineConfig } from "vitepress"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Dooit Bar Utils",
-  description: "Bar utils for Dooit",
+  title: "Dooit Extras",
+  description: "A collection of items to customize your dooit!",
   base: '/dooit-extras/',
   lastUpdated: true,
   themeConfig: {

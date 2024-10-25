@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "Dooit Extras"
-  tagline: "A collection of a items to customize your dooit!"
+  tagline: "A collection of items to customize your dooit!"
   actions:
     - theme: brand
       text: Get Started
