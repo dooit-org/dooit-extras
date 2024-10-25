@@ -35,9 +35,21 @@ export default defineConfig({
           { text: 'Bars', link: '/introduction/bars' },
         ]
       },
+      {
+        text: 'Formatters',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: 'Description', link: '/formatters/description' },
+          { text: 'Due', link: '/formatters/due' },
+          { text: 'Status', link: '/formatters/status' },
+          { text: 'Recurrence', link: '/formatters/recurrence' },
+          { text: 'Urgency', link: '/formatters/urgency' },
+        ]
+      },
 
       {
-        text: 'Built-in Widgets',
+        text: 'Widgets',
         collapsible: true,
         collapsed: true,
         items: [
@@ -56,7 +68,7 @@ export default defineConfig({
       },
 
       {
-        text: 'Built-in Bars',
+        text: 'Bars',
         collapsible: true,
         collapsed: true,
         items: [
