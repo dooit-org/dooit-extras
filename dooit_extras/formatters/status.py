@@ -6,7 +6,7 @@ from dooit.ui.api import DooitAPI
 
 
 def status_icons(
-    icons: Dict[str, str], colors: Dict[str, Style] = {}, fmt="{}"
+    icons: Dict[str, str] = {}, colors: Dict[str, Style] = {}, fmt="{}"
 ) -> Callable:
     """
     Shows status icons for todos
