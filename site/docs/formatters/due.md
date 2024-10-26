@@ -31,10 +31,9 @@ This widget shows a bold red `Danger` when the todo is due on the same day
 from dooit_extras.formatters import due_danger_today
 from dooit.ui.api.events import subscribe, Startup
 
-
 @subscribe(Startup)
 def setup(api, _):
     # ...
-    api.formatter.todos.due.add(due_causal_format)
+    api.formatter.todos.due.add(due_danger_today)
     # ...
 ```

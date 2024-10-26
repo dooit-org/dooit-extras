@@ -9,7 +9,6 @@ This widget highlights any url present within the description with theme accent
 ```python
 
 from dooit_extras.formatters import description_highlight_link
-
 from dooit.ui.api.events import subscribe, Startup
 
 @subscribe(Startup)
