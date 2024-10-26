@@ -54,3 +54,12 @@ def description_children_count(format: str = " ({}) "):
         return value + format.format(children_count)
 
     return wrapper
+
+
+def description_strike_completed(value: str, todo: Todo):
+    """
+    Strike through the description if the todo is completed.
+    """
+
+    if todo.is_completed:
+        return Text(value, style=Style(strike=True, dim=True)).markup
