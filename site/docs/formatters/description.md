@@ -1,25 +1,5 @@
 # Description Formatters
 
-## Highlight Link
-
-This formatter highlights any url present within the description with theme accent
-
-### Usage:
-
-```python
-
-from dooit_extras.formatters import description_highlight_link
-from dooit.ui.api.events import subscribe, Startup
-
-@subscribe(Startup)
-def setup(api, _):
-    # ...
-    api.formatter.workspaces.description.add(description_highlight_link)
-    api.formatter.todos.description.add(description_highlight_link)
-    # ...
-```
-
-
 ## Children Count
 
 This formatter shows the count of children present in a given `Todo`/`Workspace`
@@ -41,6 +21,27 @@ def setup(api, _):
     api.formatter.todos.description.add(description_children_count(fmt = "..."))
     # ...
 ```
+
+
+## Highlight Link
+
+This formatter highlights any url present within the description with theme accent
+
+### Usage:
+
+```python
+
+from dooit_extras.formatters import description_highlight_link
+from dooit.ui.api.events import subscribe, Startup
+
+@subscribe(Startup)
+def setup(api, _):
+    # ...
+    api.formatter.workspaces.description.add(description_highlight_link)
+    api.formatter.todos.description.add(description_highlight_link)
+    # ...
+```
+
 
 ## Strike Completed
 
