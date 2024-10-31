@@ -69,10 +69,10 @@ export default defineConfig({
       },
 
       {
-        text: "Bars",
+        text: "Configs",
         collapsible: true,
         collapsed: true,
-        items: [{ text: "Default", link: "/bars/default" }],
+        items: [{ text: "Nord", link: "/configs/nord" }],
       },
     ],
   },
