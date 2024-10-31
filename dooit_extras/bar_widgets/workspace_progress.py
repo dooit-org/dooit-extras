@@ -1,7 +1,6 @@
 from typing import Union
-from dooit.ui.api.events import subscribe
-from dooit.ui.api import DooitAPI
-from dooit.ui.events import WorkspaceSelected, TodoEvent
+from dooit.ui.api import DooitAPI, subscribe
+from dooit.ui.api.events import WorkspaceSelected, TodoEvent
 from dooit.api import Workspace
 from ._base import BarUtilWidgetBase
 

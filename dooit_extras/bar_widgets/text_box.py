@@ -1,12 +1,10 @@
-from dooit.ui.api import DooitAPI
-from dooit.ui.api.events import subscribe
-from dooit.ui.api.plug import Startup
+from dooit.ui.api import DooitAPI, subscribe, events
 from rich.text import TextType
 from ._base import BarUtilWidgetBase
 
 
 def text_wrapper(text: TextType):
-    @subscribe(Startup)
+    @subscribe(events.Startup)
     def wrapper(*_):
         return text
 

@@ -4,9 +4,8 @@ from dooit.ui.tui import DooitThemeBase
 from rich.style import Style
 from rich.text import Text
 from ._base import BarUtilWidgetBase
-from dooit.ui.api import DooitAPI
-from dooit.ui.api.events import subscribe
-from dooit.ui.events import ModeChanged
+from dooit.ui.api import DooitAPI, subscribe
+from dooit.ui.api.events import ModeChanged
 
 
 def get_mode_wrapper(mode_styles: Dict[str, Style], fmt: str):

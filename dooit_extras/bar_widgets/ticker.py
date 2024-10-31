@@ -1,6 +1,5 @@
 from time import time
-from dooit.ui.api import DooitAPI
-from dooit.ui.api.events import timer
+from dooit.ui.api import DooitAPI, timer
 from ._base import BarUtilWidgetBase
 
 
