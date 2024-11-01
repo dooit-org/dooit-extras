@@ -4,14 +4,14 @@ from dooit.api.theme import DooitThemeBase
 class Nord(DooitThemeBase):
     _name = "dooit-nord"
 
-    background_1: str = "#2E3440"  # Darkest
-    background_2: str = "#3B4252"  # Lighter
-    background_3: str = "#434C5E"  # Lightest
+    background1: str = "#2E3440"  # Darkest
+    background2: str = "#3B4252"  # Lighter
+    background3: str = "#434C5E"  # Lightest
 
     # foreground colors
-    foreground_1: str = "#D8DEE9"  # Darkest
-    foreground_2: str = "#E5E9F0"  # Lighter
-    foreground_3: str = "#ECEFF4"  # Lightest
+    foreground1: str = "#D8DEE9"  # Darkest
+    foreground2: str = "#E5E9F0"  # Lighter
+    foreground3: str = "#ECEFF4"  # Lightest
 
     # other colors
     red: str = "#BF616A"

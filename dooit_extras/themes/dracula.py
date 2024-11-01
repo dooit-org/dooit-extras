@@ -4,14 +4,14 @@ from dooit.api.theme import DooitThemeBase
 class Dracula(DooitThemeBase):
     _name = "dooit-dracula"
 
-    background_1: str = "#282a36"  # Darkest
-    background_2: str = "#44475a"  # Lighter
-    background_3: str = "#5f637e"  # Lightest
+    background1: str = "#282a36"  # Darkest
+    background2: str = "#44475a"  # Lighter
+    background3: str = "#5f637e"  # Lightest
 
     # foreground colors
-    foreground_1: str = "#cccccc"  # Darkest
-    foreground_2: str = "#e6e6e6"  # Lighter
-    foreground_3: str = "#f8f8f2"  # Lightest
+    foreground1: str = "#cccccc"  # Darkest
+    foreground2: str = "#e6e6e6"  # Lighter
+    foreground3: str = "#f8f8f2"  # Lightest
 
     # other colors
     red: str = "#ff5555"

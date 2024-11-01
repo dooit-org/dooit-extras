@@ -25,7 +25,7 @@ ICONS: defaultdict[str, PlatformInfo] = defaultdict(PlatformInfo.default)
 def get_user_platform(theme: DooitThemeBase, icon: bool) -> TextType:
     default_icons = {
         "Windows": PlatformInfo("", theme.blue),
-        "macOS": PlatformInfo("", theme.foreground_3),
+        "macOS": PlatformInfo("", theme.foreground3),
         "Linux": PlatformInfo("", theme.yellow),
         "NixOS": PlatformInfo("", theme.cyan),
         "Arch Linux": PlatformInfo("", theme.blue),

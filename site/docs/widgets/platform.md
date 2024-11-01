@@ -6,7 +6,7 @@ A widget to show the current OS platform!
 | ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
 | api           |                     | The api object provided within the function                                              |
 | icon          | `True`              | Whether to show the icon of the OS or not.                                               |
-| fg            | `theme.foreground_1`| Color to show the text in, defaults to `theme.foreground_1` or `white` based on theme    |
+| fg            | `theme.foreground1`| Color to show the text in, defaults to `theme.foreground1` or `white` based on theme    |
 | bg            | `theme.primary`     | Color to show the background in, defaults to `theme.primary` or `accent` based on theme  |
 
 ::: tip

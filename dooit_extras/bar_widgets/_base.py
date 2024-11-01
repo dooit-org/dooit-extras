@@ -52,7 +52,7 @@ class BarUtilWidgetBase(StatusBarWidget):
         return Text.from_markup(value.markup) 
 
     def render(self) -> Text:
-        fg = self.fg or self.api.app.current_theme.background_1
+        fg = self.fg or self.api.app.current_theme.background1
         bg = self.bg or self.api.app.current_theme.primary
         style = Style(color=fg, bgcolor=bg)
 

@@ -10,7 +10,7 @@ from dooit.ui.api.events import ModeChanged
 
 def get_mode_wrapper(mode_styles: Dict[str, Style], fmt: str):
     def get_default_mode_styles(theme: DooitThemeBase) -> Dict[str, Style]:
-        fg = theme.background_1
+        fg = theme.background1
         modes = defaultdict(lambda: Style(color=fg, bgcolor=theme.primary))
 
         extra_styles = dict(

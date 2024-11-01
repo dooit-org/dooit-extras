@@ -10,7 +10,7 @@ A widget to show a timer
 |paused_text   | `"Paused"`          | Text to show when the timer is paused                                                    |
 |default_text  | `"No Timers"`       | Default text to show for the timer widget. When the timer is reset, this text will show as well|
 |fmt           | `" {} "`            | Specify how the text should be formatted, `{}` represents the value that'll be displayed |
-|fg            | `theme.foreground_1`| Color to show the text in, defaults to `theme.foreground_1` or `white` based on theme    |
+|fg            | `theme.foreground1`| Color to show the text in, defaults to `theme.foreground1` or `white` based on theme    |
 |bg            | `theme.primary`     | Color to show the background in, defaults to `theme.primary` or `accent` based on theme  |
 
 ## Usage

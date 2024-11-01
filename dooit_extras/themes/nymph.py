@@ -4,14 +4,14 @@ from dooit.api.theme import DooitThemeBase
 class Nymph(DooitThemeBase):
     _name = "dooit-nymph"
 
-    background_1: str = "#1A2023"  # Darkest
-    background_2: str = "#252B2E"  # Lighter
-    background_3: str = "#373D40"  # Lightest
+    background1: str = "#1A2023"  # Darkest
+    background2: str = "#252B2E"  # Lighter
+    background3: str = "#373D40"  # Lightest
 
     # foreground colors
-    foreground_1: str = "#5B6265"  # Darkest
-    foreground_2: str = "#BCC4C9"  # Lighter
-    foreground_3: str = "#ECEFF4"  # Lightest
+    foreground1: str = "#5B6265"  # Darkest
+    foreground2: str = "#BCC4C9"  # Lighter
+    foreground3: str = "#ECEFF4"  # Lightest
 
     # other colors
     red: str = "#BC7171"

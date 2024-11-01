@@ -4,14 +4,14 @@ from dooit.api.theme import DooitThemeBase
 class Material(DooitThemeBase):
     _name = "dooit-material"
 
-    background_1: str = "#263238"  # Darkest
-    background_2: str = "#2E3C43"  # Lighter
-    background_3: str = "#314549"  # Lightest
+    background1: str = "#263238"  # Darkest
+    background2: str = "#2E3C43"  # Lighter
+    background3: str = "#314549"  # Lightest
 
     # foreground colors
-    foreground_1: str = "#90A4AE"  # Darkest
-    foreground_2: str = "#B0BEC5"  # Lighter
-    foreground_3: str = "#EEFFFF"  # Lightest
+    foreground1: str = "#90A4AE"  # Darkest
+    foreground2: str = "#B0BEC5"  # Lighter
+    foreground3: str = "#EEFFFF"  # Lightest
 
     # other colors
     red: str = "#F07178"
