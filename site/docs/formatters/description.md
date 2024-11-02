@@ -45,7 +45,7 @@ def setup(api, _):
 
 ## Strike Completed
 
-This idget strikes the todos which are completed, and optionally dimmify them
+This formatter strikes the todos which are completed, and optionally dimmify them
 
 | Param|<div style="width: 100px">Default</div> |Description|
 | ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
