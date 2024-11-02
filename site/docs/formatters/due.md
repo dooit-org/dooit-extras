@@ -24,7 +24,7 @@ def setup(api, _):
 
 ## Danger Today
 
-This formatter shows a bold red `Danger` when the todo is due on the same day
+This formatter shows a bold red `Today` text when the todo is due on the same day
 
 ```python
 
