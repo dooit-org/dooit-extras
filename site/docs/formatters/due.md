@@ -24,7 +24,7 @@ def setup(api, _):
 
 ## Danger Today
 
-This widget shows a bold red `Danger` when the todo is due on the same day
+This formatter shows a bold red `Danger` when the todo is due on the same day
 
 ```python
 
@@ -37,3 +37,13 @@ def setup(api, _):
     api.formatter.todos.due.add(due_danger_today)
     # ...
 ```
+
+## Due Icon
+
+This formatter shows due icon based on status
+
+| Param|<div style="width: 100px">Default</div> |Description|
+| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| completed     |  `"󰃯 "`             | Icon for completed todo                                                                  |
+| pending       |  `"󰃰 "`             | Icon for pending todo                                                                    |
+| overdue       |  `" "`             | Icon for overdue todo                                                                    |
