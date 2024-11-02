@@ -76,4 +76,13 @@ export default defineConfig({
       },
     ],
   },
+  head: [
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/FiraCode/Regular/FiraCodeNerdFont-Regular.ttf",
+      },
+    ],
+  ],
 });

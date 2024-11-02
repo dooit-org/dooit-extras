@@ -40,10 +40,10 @@ def setup(api, _):
 
 ## Due Icon
 
-This formatter shows due icon based on status
+This formatter shows due icons based on status.
 
-| Param|<div style="width: 100px">Default</div> |Description|
-| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
-| completed     |  `"󰃯 "`             | Icon for completed todo                                                                  |
-| pending       |  `"󰃰 "`             | Icon for pending todo                                                                    |
-| overdue       |  `" "`             | Icon for overdue todo                                                                    |
+| Param       |<div style="width: 100px">Default</div> | Description                                      |
+|-------------|:--------------------------------------:|:-------------------------------------------------|
+| completed   | <span class="nerd-icon">󰃯</span>      | Icon for completed todo                          |
+| pending     | <span class="nerd-icon">󰃰</span>      | Icon for pending todo                            |
+| overdue     | <span class="nerd-icon"></span>      | Icon for overdue todo                            |
