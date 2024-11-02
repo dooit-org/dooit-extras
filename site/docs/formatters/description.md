@@ -27,8 +27,6 @@ def setup(api, _):
 
 This formatter highlights any url present within the description with theme accent
 
-### Usage:
-
 ```python
 
 from dooit_extras.formatters import description_highlight_link

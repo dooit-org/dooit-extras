@@ -7,8 +7,6 @@ This widget shows the date in a simple format
 Eg: Instead of the default `yyyy-mm-dd`, it'll show in the format: \
 `{Mon} {day} ['year(optional)]`
 
-### Usage:
-
 ```python
 
 from dooit_extras.formatters import due_causal_format
