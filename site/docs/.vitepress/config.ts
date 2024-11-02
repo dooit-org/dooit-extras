@@ -31,8 +31,7 @@ export default defineConfig({
         text: "Getting Started",
         items: [
           { text: "Introduction", link: "/introduction" },
-          { text: "Widgets", link: "/introduction/widgets" },
-          { text: "Bars", link: "/introduction/bars" },
+          { text: "Usage", link: "/introduction/usage" },
         ],
       },
       {
