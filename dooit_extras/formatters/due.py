@@ -1,7 +1,7 @@
 from typing import Optional
 from rich.style import Style
 from dooit.api.todo import datetime, Todo
-from dooit.ui.api import DooitAPI
+from dooit.ui.api import DooitAPI, extra_formatter
 from rich.style import Style
 from rich.text import Text
 from dooit.ui.api import DooitAPI
@@ -44,3 +44,24 @@ def due_danger_today(due: Optional[datetime], _: Todo, api: DooitAPI) -> Optiona
                 bold=True,
             ),
         ).markup
+
+def due_icon(completed: str = "󰃯 ", pending: str = "󰃰 ", overdue: str = " "):
+
+    @extra_formatter
+    def wrapper(due: str, model: Todo, api: DooitAPI):
+        theme = api.vars.theme
+
+        if model.is_completed:
+            icon = completed
+            color = theme.green
+
+        elif model.is_overdue:
+            icon = overdue
+            color = theme.red
+        else:
+            icon = pending
+            color = theme.yellow
+
+        return Text() + Text(icon, style=Style(color=color)) + due
+
+    return wrapper
