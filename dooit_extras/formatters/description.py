@@ -4,13 +4,13 @@ from rich.style import Style
 from dooit.ui.api import DooitAPI
 from rich.style import Style
 from rich.text import Text
-from dooit.ui.api import DooitAPI, allow_multiple_formatting
+from dooit.ui.api import DooitAPI, extra_formatter
 import re
 
 ModelType = Union[Todo, Workspace]
 
 
-@allow_multiple_formatting
+@extra_formatter
 def description_highlight_link(value: str, _, api: DooitAPI):
     """
     Highlight URLs in the description.
@@ -37,7 +37,7 @@ def description_highlight_link(value: str, _, api: DooitAPI):
 
 
 def description_children_count(format: str = " ({}) "):
-    @allow_multiple_formatting
+    @extra_formatter
     def wrapper(value: str, model: ModelType):
         """
         Highlight the number of children in the description.
@@ -59,7 +59,7 @@ def description_children_count(format: str = " ({}) "):
 
 def description_strike_completed(dim: bool = True):
 
-    @allow_multiple_formatting
+    @extra_formatter
     def wrapper(value: str, todo: Todo):
         if todo.is_completed:
             return Text(value, style=Style(strike=True, dim=dim)).markup
