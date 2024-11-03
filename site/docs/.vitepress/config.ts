@@ -66,7 +66,12 @@ export default defineConfig({
           { text: "Workspace Progress", link: "/widgets/workspace_progress" },
         ],
       },
-
+      {
+        text: "Scripts",
+        collapsible: true,
+        collapsed: true,
+        items: [{ text: "Toggle Workspaces", link: "/scripts/toggle_workspaces" }],
+      },
       {
         text: "Configs",
         collapsible: true,
