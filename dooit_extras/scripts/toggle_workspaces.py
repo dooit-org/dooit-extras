@@ -14,6 +14,8 @@ CSS_ID = "toggle_workspaces"
 
 def toggle_workspaces(api: DooitAPI):
     def wrapper():
+        """Toggles the visibility of the workspaces tree"""
+
         if api.css.is_active(CSS_ID):
             api.css.unject_css(CSS_ID)
             api.app.workspace_tree.focus()
