@@ -6,9 +6,8 @@ This formatter shows different icons based on the current status of the todo
 
 | Param|<div style="width: 100px">Default</div> |Description|
 | ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
-| icons         |  `{}`               | The format for showing the children                                                      |
-| colors        |  `{}`               | The format for showing the children                                                      |
-| fmt           |  `"{}"`         | The format for showing the children                                                      |
+| icons         |  `{}`               | A dictionary with icon for respective statuses                                           |
+| colors        |  `{}`               | A dictionary with styles for respective statuses                                         |
 
 Example icons:
 
@@ -19,7 +18,7 @@ Example icons:
 Example colors:
 
 ```py
-{"completed": theme.green, "pending": theme.yellow, "overdue": theme.red"}
+{"completed": theme.green, "pending": theme.yellow, "overdue": theme.red}
 ```
 
 
