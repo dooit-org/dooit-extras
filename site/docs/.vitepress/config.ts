@@ -16,7 +16,7 @@ export default defineConfig({
     },
     nav: [
       { text: "Home", link: "/" },
-      { text: "Get Started", link: "/introduction" },
+      { text: "Get Started", link: "/getting_started/introduction" },
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/dooit-org/dooit-extras" },
@@ -30,8 +30,8 @@ export default defineConfig({
       {
         text: "Getting Started",
         items: [
-          { text: "Introduction", link: "/introduction" },
-          { text: "Usage", link: "/introduction/usage" },
+          { text: "Introduction", link: "/getting_started/introduction" },
+          { text: "Usage", link: "/getting_started/usage" },
         ],
       },
       {
