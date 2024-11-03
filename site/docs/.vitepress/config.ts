@@ -41,8 +41,9 @@ export default defineConfig({
         items: [
           { text: "Description", link: "/formatters/description" },
           { text: "Due", link: "/formatters/due" },
-          { text: "Status", link: "/formatters/status" },
+          { text: "Effort", link: "/formatters/effort" },
           { text: "Recurrence", link: "/formatters/recurrence" },
+          { text: "Status", link: "/formatters/status" },
           { text: "Urgency", link: "/formatters/urgency" },
         ],
       },
