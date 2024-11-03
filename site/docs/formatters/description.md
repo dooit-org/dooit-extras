@@ -27,6 +27,10 @@ def setup(api, _):
 
 This formatter highlights any url present within the description with theme accent
 
+| Param|<div style="width: 100px">Default</div> |Description|
+| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| color         |  `None`             | The color to use for highlighting URLs. If not provided, uses the theme's primary color   |
+
 ```python
 
 from dooit_extras.formatters import description_highlight_link
@@ -35,8 +39,8 @@ from dooit.ui.api.events import subscribe, Startup
 @subscribe(Startup)
 def setup(api, _):
     # ...
-    api.formatter.workspaces.description.add(description_highlight_link)
-    api.formatter.todos.description.add(description_highlight_link)
+    api.formatter.workspaces.description.add(description_highlight_link())
+    api.formatter.todos.description.add(description_highlight_link())
     # ...
 ```
 
