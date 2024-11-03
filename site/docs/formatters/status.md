@@ -2,16 +2,26 @@
 
 ## Status Icons
 
-This widget modifies status icon to show customized icons
-
-Eg: Instead of the default `yyyy-mm-dd`, it'll show in the format: \
-`{Mon} {day} ['year(optional)]`
+This formatter shows different icons based on the current status of the todo
 
 | Param|<div style="width: 100px">Default</div> |Description|
 | ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
 | icons         |  `{}`               | The format for showing the children                                                      |
 | colors        |  `{}`               | The format for showing the children                                                      |
 | fmt           |  `"{}"`         | The format for showing the children                                                      |
+
+Example icons:
+
+```py
+{"completed": "x", "pending": "o", "overdue": "!"}
+```
+
+Example colors:
+
+```py
+{"completed": theme.green, "pending": theme.yellow, "overdue": theme.red"}
+```
+
 
 ::: tip INFO
 By default, icons for completed, pending and overdue are `x`, `o` and `!` respectively \

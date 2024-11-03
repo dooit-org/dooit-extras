@@ -1,12 +1,12 @@
 from typing import Callable, Dict
-from rich.style import Style
+from rich.style import StyleType, Style
 from rich.text import Text
 from dooit.api import Todo
 from dooit.ui.api import DooitAPI
 
 
 def status_icons(
-    icons: Dict[str, str] = {}, colors: Dict[str, Style] = {}, fmt="{}"
+    icons: Dict[str, str] = {}, colors: Dict[str, StyleType] = {}, fmt="{}"
 ) -> Callable:
     """
     Shows status icons for todos
