@@ -42,6 +42,19 @@ This formatter shows due icons based on status.
 
 | Param       |<div style="width: 100px">Default</div> | Description                                      |
 |-------------|:--------------------------------------:|:-------------------------------------------------|
-| completed   | <span class="nerd-icon">󰃯</span>      | Icon for completed todo                          |
-| pending     | <span class="nerd-icon">󰃰</span>      | Icon for pending todo                            |
-| overdue     | <span class="nerd-icon"></span>      | Icon for overdue todo                            |
+| completed   | <span class="nerd-icon">󰃯</span>       | Icon for completed todo                          |
+| pending     | <span class="nerd-icon">󰃰</span>       | Icon for pending todo                            |
+| overdue     | <span class="nerd-icon"></span>       |  Icon for overdue todo                           |
+
+
+```python
+
+from dooit_extras.formatters import due_icon
+from dooit.ui.api.events import subscribe, Startup
+
+@subscribe(Startup)
+def setup(api, _):
+    # ...
+    api.formatter.todos.due.add(due_icon())
+    # ...
+```
