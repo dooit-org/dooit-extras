@@ -14,3 +14,7 @@ from dooit.ui.api.events import Startup
 def setup(api: DooitAPI, _):
     api.keys.set("<ctrl+b>", toggle_workspaces(api))
 ```
+
+Preview:
+
+<video controls="controls" src="./previews/toggle_workspaces.mp4" />
