@@ -4,6 +4,12 @@ This script allows you to edit the border for workspaces and todo trees
 
 Check out available border types [here](https://textual.textualize.io/styles/border/#all-border-types)
 
+| Param|<div style="width: 100px">Default</div> |Description|
+| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| api           |                     | The dooit api object                                                                     |
+| focus_border  |                     | The border to use for the focused tree                                                   |
+| dim_border    |                     | The border to use for the unfocused tree                                                 |
+
 Example:
 
 ```py

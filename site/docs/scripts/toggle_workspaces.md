@@ -4,6 +4,10 @@ This script can toggle the view for workspaces tree
 
 You can bind it to a keybinding and use that
 
+| Param|<div style="width: 100px">Default</div> |Description|
+| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| api           |                     | The dooit api object                                                                     |
+
 Example:
 
 ```py

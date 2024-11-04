@@ -5,6 +5,7 @@ The value for opacity is in the format: `<number>%` where number can be from 1 t
 
 | Param|<div style="width: 100px">Default</div> |Description|
 | ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| api           |                     | The dooit api object                                                                     |
 | opacity       |  `"50%"`            | The opacity of the unfocused tree                                                        |
 
 Example:
