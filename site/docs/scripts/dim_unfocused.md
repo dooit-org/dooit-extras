@@ -8,6 +8,7 @@ Example:
 ```py
 from dooit.ui.api import DooitAPI, subscribe
 from dooit.ui.api.events import Startup
+from dooit_extras.scripts import dim_unfocused
 
 @subscribe(Startup)
 def setup(api: DooitAPI, _):
