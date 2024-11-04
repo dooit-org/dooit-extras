@@ -6,7 +6,7 @@ This formatter shows an icon for todos that have recurrence enabled
 
 | Param|<div style="width: 100px">Default</div> |Description|
 | ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
-| icon          |  <span class="nerd-icon">󰑖</span>       | The icon to show for recurring todos                                                     |
+| icon          |  <span class="nerd-icon">󰑖</span>       | The icon to show for recurring todos                                 |
 | color         |  `None`             | The color to use for the icon. If not provided, uses the theme's primary color           |
 
 
