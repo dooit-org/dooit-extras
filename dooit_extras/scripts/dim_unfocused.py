@@ -1,9 +1,7 @@
 from dooit.ui.api import DooitAPI
 
-def dim_unfocused(
-    api: DooitAPI,
-    opacity: str
-):
+
+def dim_unfocused(api: DooitAPI, opacity: str = "50%"):
     """Dimmify unfocused tree"""
 
     CSS = f"""\
@@ -17,4 +15,4 @@ def dim_unfocused(
     """
 
     api.css.inject_css(CSS)
-    api.app.refresh_css() # quick refresh
+    api.app.refresh_css()  # quick refresh
