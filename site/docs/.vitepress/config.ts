@@ -73,6 +73,7 @@ export default defineConfig({
         items: [
           { text: "Toggle Workspaces", link: "/scripts/toggle_workspaces" },
           { text: "Custom Tree Borders", link: "/scripts/custom_tree_borders" },
+          { text: "Dim Unfocused", link: "/scripts/dim_unfocused" },
         ],
       },
       {
