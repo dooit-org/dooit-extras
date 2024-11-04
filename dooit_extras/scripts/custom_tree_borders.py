@@ -1,7 +1,5 @@
-from typing import Literal, Tuple
+from typing import Literal
 from dooit.ui.api import DooitAPI
-from dooit.ui.widgets import ModelTree
-from rich.style import StyleType
 
 BorderKind = Literal[
     "ascii",
@@ -24,18 +22,19 @@ BorderKind = Literal[
 
 def custom_tree_borders(
     api: DooitAPI,
-    focus_border: Tuple[BorderKind, StyleType],
-    dim_border: Tuple[BorderKind, StyleType],
+    focus_border: BorderKind,
+    dim_border: BorderKind,
 ):
     """Customize tree borders"""
     CSS = f"""\
     ModelTree {{
-        border: {dim_border[0]} {dim_border[1]};
+        border: {dim_border} $background3;
 
         &:focus {{ 
-           border: {focus_border[0]} {focus_border[1]};
+           border: {focus_border} $primary;
        }}
     }}
     """
 
     api.css.inject_css(CSS)
+    api.app.refresh_css()
