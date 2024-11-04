@@ -37,4 +37,4 @@ def custom_tree_borders(
     """
 
     api.css.inject_css(CSS)
-    api.app.refresh_css()
+    api.app.refresh_css() # quick refresh
