@@ -70,7 +70,10 @@ export default defineConfig({
         text: "Scripts",
         collapsible: true,
         collapsed: true,
-        items: [{ text: "Toggle Workspaces", link: "/scripts/toggle_workspaces" }],
+        items: [
+          { text: "Toggle Workspaces", link: "/scripts/toggle_workspaces" },
+          { text: "Custom Tree Borders", link: "/scripts/custom_tree_borders" },
+        ],
       },
       {
         text: "Configs",
