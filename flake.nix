@@ -49,7 +49,7 @@
         buildInputs =
           (with python3; [
             ruff
-            pre-commit
+            pre-commit-hooks
             textual-dev
             pytest
             coverage
