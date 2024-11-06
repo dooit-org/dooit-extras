@@ -8,4 +8,4 @@ Along with some pre-configured configs to get you started!
 
 ## Installation
 
-You can refere to [dooit's installation guide]() which also includes `dooit-extras`
+You can refere to [dooit's installation guide](/) which also includes `dooit-extras`
