@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1730908079,
-        "narHash": "sha256-ih5iWOIa/hbinLaa/mPpDzaBxzVihv0px6buzXnv8Tk=",
+        "lastModified": 1730909381,
+        "narHash": "sha256-jCDHtUP6SvQ/0AOW+q/7irZ6GkiRd2/qiPPRB5FsiJk=",
         "owner": "kraanzu",
         "repo": "dooit",
-        "rev": "0d308e829d71fea68dc20e2e52125e66fe74ba6c",
+        "rev": "c35a0d24384ba547cd7acf72ed89bf625eeaafa4",
         "type": "github"
       },
       "original": {
