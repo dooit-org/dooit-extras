@@ -21,7 +21,7 @@ in
     build-system = with python3.pkgs; [poetry-core];
     buildInputs = dooit.propagatedBuildInputs;
     pythonRelaxDeps = dooit.pythonRelaxDeps;
-    propagatedBuildInputs = [];
+    propagatedBuildInputs = dooit.propagatedBuildInputs;
 
     # No tests available
     doCheck = false;
