@@ -18,7 +18,6 @@
       system:
         import nixpkgs {
           inherit system;
-          overlays = [dooit.overlay];
         }
     );
 
