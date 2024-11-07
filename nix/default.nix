@@ -19,9 +19,21 @@ in
     };
 
     build-system = with python3.pkgs; [poetry-core];
-    buildInputs = dooit.propagatedBuildInputs;
-    pythonRelaxDeps = dooit.pythonRelaxDeps;
-    propagatedBuildInputs = dooit.propagatedBuildInputs;
+    pythonRelaxDeps = [
+      "tzlocal"
+      "textual"
+    ];
+
+    propagatedBuildInputs = with python3.pkgs; [
+      pyperclip
+      textual
+      pyyaml
+      dateutil
+      sqlalchemy
+      platformdirs
+      tzlocal
+      click
+    ];
 
     # No tests available
     doCheck = false;
