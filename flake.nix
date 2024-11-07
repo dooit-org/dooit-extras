@@ -9,7 +9,6 @@
   outputs = {
     self,
     nixpkgs,
-    dooit,
     ...
   }: let
     forEachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all;
@@ -21,7 +20,7 @@
         }
     );
 
-    packageFor = system: pkgsFor.${system}.callPackage ./nix {dooit = dooit.packages.${system}.default;};
+    packageFor = system: pkgsFor.${system}.callPackage ./nix {};
   in {
     packages = forEachSystem (
       system: {
