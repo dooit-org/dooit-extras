@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    dooit.url = "github:kraanzu/dooit/develop";
+    # dooit.url = "github:kraanzu/dooit/develop";
   };
 
   outputs = {
