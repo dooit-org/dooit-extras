@@ -19,16 +19,12 @@ in
     };
 
     build-system = with python3.pkgs; [poetry-core];
-    buildInputs = [dooit];
+    buildInputs = dooit.propagatedBuildInputs;
+    pythonRelaxDeps = dooit.pythonRelaxDeps;
     propagatedBuildInputs = [];
 
     # No tests available
     doCheck = false;
-
-    pythonRelaxDeps = [
-      "tzlocal"
-      "textual"
-    ];
 
     meta = with lib; {
       description = "Extra Utilities for Dooit";
