@@ -310,7 +310,7 @@ description = "A TUI Todo Manager"
 optional = false
 python-versions = "^3.9"
 files = []
-develop = true
+develop = false
 
 [package.dependencies]
 click = "^8.1.7"
@@ -323,8 +323,10 @@ textual = "^0.85.2"
 tzlocal = "^5.2"
 
 [package.source]
-type = "directory"
-url = "../dooit"
+type = "git"
+url = "https://github.com/kraanzu/dooit.git"
+reference = "develop"
+resolved_reference = "1f6b32c2c99b05196d1bb0e4445e2ee46dd76e37"
 
 [[package]]
 name = "exceptiongroup"
@@ -1647,4 +1649,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "411f98b719d633c558fe913a13a216942e703a28105f30d6f122f4a8ed34bb4a"
+content-hash = "4547290875a30334185489471fe85451a7b36d930bb63aa341e5a7d8ccf4320d"
