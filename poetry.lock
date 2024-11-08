@@ -326,7 +326,7 @@ tzlocal = "^5.2"
 type = "git"
 url = "https://github.com/kraanzu/dooit.git"
 reference = "develop"
-resolved_reference = "1f6b32c2c99b05196d1bb0e4445e2ee46dd76e37"
+resolved_reference = "e70ae78a63c3b65555ceba8cdee0532f63b8f188"
 
 [[package]]
 name = "exceptiongroup"
