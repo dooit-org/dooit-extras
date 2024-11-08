@@ -37,7 +37,6 @@ class StatusIcons(Custom):
         pending_icon=" ",
         overdue_icon=" ",
         fmt: str = " {} ",
-        fg: str = "",
         bg: str = "",
     ) -> None:
         super().__init__(
@@ -45,6 +44,6 @@ class StatusIcons(Custom):
             get_status_icons(completed_icon, pending_icon, overdue_icon),
             None,
             fmt,
-            fg,
+            "",
             bg or api.vars.theme.background3,
         )
