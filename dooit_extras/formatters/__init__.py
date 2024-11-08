@@ -2,6 +2,7 @@ from .description import (
     description_highlight_link,
     description_children_count,
     description_strike_completed,
+    todo_description_progress,
 )
 from .due import due_danger_today, due_causal_format, due_icon
 from .status import status_icons
@@ -10,6 +11,7 @@ from .effort import effort_icon
 from .urgency import urgency_icons
 
 __all__ = [
+    "todo_description_progress",
     "description_highlight_link",
     "description_children_count",
     "description_strike_completed",

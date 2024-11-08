@@ -59,12 +59,37 @@ def description_children_count(format: str = " ({}) "):
     return wrapper
 
 
-
 def description_strike_completed(dim: bool = True):
-
     @extra_formatter
     def wrapper(value: str, todo: Todo):
         if todo.is_completed:
             return Text(value, style=Style(strike=True, dim=dim)).markup
+
+    return wrapper
+
+
+def todo_description_progress(fmt=" ({percentage_complete}%)"):
+    @extra_formatter
+    def wrapper(value: str, todo: Todo):
+        if not todo.todos:
+            return
+
+        children_count = len(todo.todos)
+
+        completed_count = len([t for t in todo.todos if t.is_completed])
+        remaining_count = children_count - completed_count
+
+        percentage_complete = int(round((completed_count / children_count) * 100))
+        percetage_remaining = 100 - percentage_complete
+
+        data = dict(
+            children_count=children_count,
+            completed_count=completed_count,
+            remaining_count=remaining_count,
+            percentage_complete=percentage_complete,
+            percentage_remaining=percetage_remaining,
+        )
+
+        return value + fmt.format(**data)
 
     return wrapper
