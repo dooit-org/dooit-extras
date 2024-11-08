@@ -61,6 +61,7 @@ export default defineConfig({
           { text: "Platform", link: "/widgets/platform" },
           { text: "Powerline", link: "/widgets/powerline" },
           { text: "Spacer", link: "/widgets/spacer" },
+          { text: "Status Icons", link: "/widgets/status_icons" },
           { text: "TextBox", link: "/widgets/text_box" },
           { text: "Ticker", link: "/widgets/ticker" },
           { text: "Workspace Progress", link: "/widgets/workspace_progress" },
