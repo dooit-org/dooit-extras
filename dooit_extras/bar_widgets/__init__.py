@@ -9,6 +9,7 @@ from .ticker import Ticker
 from .text_poller import Custom
 from .powerline import Powerline
 from .platform import Platform
+from .status_icons import StatusIcons
 
 
 __all__ = [
@@ -23,4 +24,5 @@ __all__ = [
     "Custom",
     "Powerline",
     "Platform",
+    "StatusIcons",
 ]
