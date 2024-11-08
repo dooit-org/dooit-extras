@@ -81,7 +81,11 @@ export default defineConfig({
         text: "Configs",
         collapsible: true,
         collapsed: true,
-        items: [{ text: "Nord", link: "/configs/nord" }],
+        items: [
+          { text: "Config 1", link: "/configs/config1" },
+          { text: "Config 2", link: "/configs/config2" },
+          { text: "Config 3", link: "/configs/config3" },
+        ],
       },
     ],
   },
