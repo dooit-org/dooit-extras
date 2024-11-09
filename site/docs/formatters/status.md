@@ -6,9 +6,9 @@ This formatter shows different icons based on the current status of the todo
 
 | Param|<div style="width: 100px">Default</div> |Description|
 | ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
-| completed_icon|  `"x"`               | The icon to show when status is `completed`                                             |
-| pending_icon  |  `"o"`               | The icon to show when status is `pending`                                               |
-| overdue_icon  |  `"!"`               | The icon to show when status is `overdue`                                               |
+| completed     |  `"x"`               | The icon to show when status is `completed`                                             |
+| pending       |  `"o"`               | The icon to show when status is `pending`                                               |
+| overdue       |  `"!"`               | The icon to show when status is `overdue`                                               |
 
 
 ::: tip INFO

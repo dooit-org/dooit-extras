@@ -5,7 +5,7 @@ from dooit.ui.api import DooitAPI
 
 
 def status_icons(
-    completed_icon="x", pending_icon="o", overdue_icon="!", fmt="{}"
+    completed="x", pending="o", overdue="!", fmt="{}"
 ) -> Callable:
     """
     Shows status icons for todos
@@ -18,13 +18,13 @@ def status_icons(
 
         theme = api.vars.theme
         if status == "completed":
-            icon = completed_icon
+            icon = completed
             style = theme.green
         elif status == "pending":
-            icon = pending_icon
+            icon = pending
             style = theme.yellow
         else:
-            icon = overdue_icon
+            icon = overdue
             style = theme.red
 
         return Text.from_markup(fmt.format(icon), style=style)
