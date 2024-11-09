@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optionaldue.py
 from rich.style import Style
 from dooit.api.todo import datetime, Todo
 from dooit.ui.api import DooitAPI, extra_formatter
@@ -50,6 +50,8 @@ def due_icon(completed: str = "󰃯 ", pending: str = "󰃰 ", overdue: str = "�
     @extra_formatter
     def wrapper(due: str, model: Todo, api: DooitAPI):
         theme = api.vars.theme
+        if not model.due:
+            return due
 
         if model.is_completed:
             icon = completed
