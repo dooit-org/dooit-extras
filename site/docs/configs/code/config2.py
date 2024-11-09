@@ -68,7 +68,7 @@ def setup_formatters(api: DooitAPI, _):
     fmt.todos.effort.add(effort_icon(icon="󱠇 "))
 
     # description formatter
-    format = Text("  {completed_count}/{total_count}", style=theme.green).markup
+    format = Text("  {completed_count}/{total_count}", style=theme.green).markup
     fmt.todos.description.add(todo_description_progress(fmt=format))
     fmt.todos.description.add(description_highlight_tags(fmt=" {}"))
     fmt.todos.description.add(description_strike_completed())
@@ -105,7 +105,7 @@ def setup_bar(api: DooitAPI, _):
 def setup_dashboard(api: DooitAPI, _):
     theme = api.vars.theme
 
-    wolf_art = r"""
+    ascii_art = r"""
    ,-.       _,---._ __  / \
  /  )    .-'       `./ /   \
 (  (   ,'            `/    /|
@@ -119,18 +119,20 @@ def setup_dashboard(api: DooitAPI, _):
   `--'   `--'
     """
 
-    wolf_art = Text(wolf_art, style=theme.primary)
-    wolf_art.highlight_words(["TODOS"], style=theme.red)
+    ascii_art = Text(ascii_art, style=theme.primary)
+    ascii_art.highlight_words(["TODOS"], style=theme.red)
 
     due_today = len([i.is_due_today for i in Todo.all()])
     overdue = len([i.is_overdue for i in Todo.all()])
 
+    header = Text(
+        "Another day, another opportunity to organize my todos and then procrastinate",
+        style=Style(color=theme.secondary, bold=True, italic=True),
+    )
+
     items = [
-        Text(
-            "Another day, another opportunity to organize my todos and then procrastinate",
-            style=Style(color=theme.secondary, bold=True, italic=True),
-        ),
-        wolf_art,
+        header,
+        ascii_art,
         "",
         "",
         Text("󰠠 Tasks pending today: {}".format(due_today), style=theme.green),

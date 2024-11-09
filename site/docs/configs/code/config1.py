@@ -59,7 +59,7 @@ def setup_dashboard(api: DooitAPI, _):
     now = datetime.now()
     formatted_date = now.strftime(" 󰸘 %A, %d %b ")
 
-    wolf_art = r"""
+    ascii_art = r"""
                      .
                     / V\
                   / `  /
@@ -74,7 +74,7 @@ def setup_dashboard(api: DooitAPI, _):
     """
 
     items = [
-        Text(wolf_art, style=api.vars.theme.primary),
+        Text(ascii_art, style=api.vars.theme.primary),
         "",
         Text(
             formatted_date,
