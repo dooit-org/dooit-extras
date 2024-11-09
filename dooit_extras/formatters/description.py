@@ -39,7 +39,7 @@ def description_highlight_link(color: Optional[str] = None):
     return wrapper
 
 
-def description_children_count(format: str = " ({}) "):
+def description_children_count(fmt: str = " ({}) "):
     @extra_formatter
     def wrapper(value: str, model: ModelType):
         """
@@ -54,7 +54,7 @@ def description_children_count(format: str = " ({}) "):
         if not children_count:
             return
 
-        return value + format.format(children_count)
+        return value + fmt.format(children_count)
 
     return wrapper
 

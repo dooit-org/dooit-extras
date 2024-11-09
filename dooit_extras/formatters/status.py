@@ -27,6 +27,6 @@ def status_icons(
             icon = overdue_icon
             style = theme.red
 
-        return Text(fmt.format(icon), style=style)
+        return Text.from_markup(fmt.format(icon), style=style)
 
     return wrapper
