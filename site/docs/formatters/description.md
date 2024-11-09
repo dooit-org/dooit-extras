@@ -86,7 +86,7 @@ Options available for `fmt` parameters are:
 |  remaining_percent    | The remaining progress in percentage (1-100)                                             |
 |  completed_count      | The number of subtask completed                                                          |
 |  remaining_count      | The number of subtask not completed                                                      |
-|  children_count       | The total number of subtask the todo has                                                 |
+|  total_count          | The total number of subtask the todo has                                                 |
 
 ```python
 

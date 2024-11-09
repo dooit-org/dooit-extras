@@ -74,16 +74,16 @@ def todo_description_progress(fmt=" ({completed_percent}%)"):
         if not todo.todos:
             return
 
-        children_count = len(todo.todos)
+        total_count = len(todo.todos)
 
         completed_count = len([t for t in todo.todos if t.is_completed])
-        remaining_count = children_count - completed_count
+        remaining_count = total_count - completed_count
 
-        completed_percent = int(round((completed_count / children_count) * 100))
+        completed_percent = int(round((completed_count / total_count) * 100))
         remaining_percent = 100 - completed_percent
 
         data = dict(
-            children_count=children_count,
+            total_count=total_count,
             completed_count=completed_count,
             remaining_count=remaining_count,
             completed_percent=completed_percent,
