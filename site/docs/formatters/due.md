@@ -13,13 +13,13 @@ Eg: Instead of the default `yyyy-mm-dd`, it'll show in the format: \
 
 ```python
 
-from dooit_extras.formatters import due_causal_format
+from dooit_extras.formatters import due_casual_format
 from dooit.ui.api.events import subscribe, Startup
 
 @subscribe(Startup)
 def setup(api, _):
     # ...
-    api.formatter.todos.due.add(due_causal_format())
+    api.formatter.todos.due.add(due_casual_format())
     # ...
 ```
 

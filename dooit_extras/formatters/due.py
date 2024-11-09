@@ -5,7 +5,7 @@ from dooit.ui.api import DooitAPI, extra_formatter
 from rich.text import Text
 
 
-def due_causal_format(fmt="{}") -> Callable:
+def due_casual_format(fmt="{}") -> Callable:
     def wrapper(due: Optional[datetime], _: Todo) -> str:
         """
         Shows the date in a more simple format:
