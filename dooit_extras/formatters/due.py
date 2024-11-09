@@ -2,9 +2,7 @@ from typing import Optional
 from rich.style import Style
 from dooit.api.todo import datetime, Todo
 from dooit.ui.api import DooitAPI, extra_formatter
-from rich.style import Style
 from rich.text import Text
-from dooit.ui.api import DooitAPI
 
 
 def due_causal_format(due: Optional[datetime], _: Todo) -> str:
