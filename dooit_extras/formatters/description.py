@@ -68,9 +68,9 @@ def description_strike_completed(dim: bool = True):
     return wrapper
 
 
-def description_highlight_tags(color: StyleType = "", fmt="@{}"):
+def description_highlight_tags(color: StyleType = "", fmt=" {}"):
     @extra_formatter
-    def wrapper(value: str, todo: Todo, api: DooitAPI):
+    def wrapper(value: str, _: Todo, api: DooitAPI):
         """
         Highlight tags in the description.
         """
