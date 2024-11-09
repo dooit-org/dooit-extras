@@ -64,6 +64,6 @@ def due_icon(completed: str = "󰃯 ", pending: str = "󰃰 ", overdue: str = "�
             icon = pending
             color = theme.yellow
 
-        return Text() + Text(icon, style=Style(color=color)) + due
+        return Text() + Text.from_markup(icon, style=Style(color=color)) + due
 
     return wrapper

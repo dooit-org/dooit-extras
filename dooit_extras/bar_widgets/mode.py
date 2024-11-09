@@ -32,7 +32,7 @@ def get_mode_wrapper(
         mode = mode_aliases.get(api.app._mode, api.app._mode)
         styles_dict = get_default_mode_styles(api.vars.theme) | mode_styles
 
-        return Text(fmt.format(mode), style=styles_dict[mode])
+        return Text.from_markup(fmt.format(mode), style=styles_dict[mode])
 
     return get_mode
 

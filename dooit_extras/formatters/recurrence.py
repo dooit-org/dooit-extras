@@ -13,6 +13,6 @@ def recurrence_icon(icon: str = "󰑖 ", color: Optional[str] = None):
         if not model.recurrence:
             return value
 
-        return Text() + Text(icon, style=Style(color=color or theme.primary)) + value
+        return Text() + Text.from_markup(icon, style=Style(color=color or theme.primary)) + value
 
     return wrapper

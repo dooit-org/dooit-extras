@@ -19,11 +19,11 @@ def get_status_icons(completed_icon, pending_icon, overdue_icon):
 
         return (
             Text()
-            + Text(completed_icon + str(completed), style=theme.green)
+            + Text.from_markup(completed_icon + str(completed), style=theme.green)
             + Text(" ")
-            + Text(pending_icon + str(pending), style=theme.yellow)
+            + Text.from_markup(pending_icon + str(pending), style=theme.yellow)
             + Text(" ")
-            + Text(overdue_icon + str(overdue), style=theme.red)
+            + Text.from_markup(overdue_icon + str(overdue), style=theme.red)
         )
 
     return wrapper

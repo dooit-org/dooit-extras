@@ -38,6 +38,6 @@ def urgency_icons(
         icon = default_icons[urgency]
         style = default_styles[urgency]
 
-        return Text(fmt.format(icon), style=style)
+        return Text.from_markup(fmt.format(icon), style=style)
 
     return wrapper

@@ -63,7 +63,7 @@ def description_strike_completed(dim: bool = True):
     @extra_formatter
     def wrapper(value: str, todo: Todo):
         if todo.is_completed:
-            return Text(value, style=Style(strike=True, dim=dim)).markup
+            return Text.from_markup(value, style=Style(strike=True, dim=dim)).markup
 
     return wrapper
 
@@ -81,7 +81,7 @@ def description_highlight_tags(color: StyleType = "", fmt=" {}"):
         for match in re.finditer(regex, value):
             start, end = match.span()
             formatted_tag = fmt.format(value[start + 1 : end])  # +1 for @ symbol
-            formatted_tag = Text(formatted_tag, style=style).markup
+            formatted_tag = Text.from_markup(formatted_tag, style=style).markup
             value = value[:start] + formatted_tag + value[end:]
 
         return value

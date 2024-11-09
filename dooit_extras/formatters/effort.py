@@ -17,7 +17,10 @@ def effort_icon(
         if not show_on_zero and model.effort == 0:
             return ""
 
-        return Text() + Text(icon, style=Style(color=color or theme.orange)) + value
+        return (
+            Text()
+            + Text.from_markup(icon, style=Style(color=color or theme.orange))
+            + value
+        )
 
     return wrapper
-
