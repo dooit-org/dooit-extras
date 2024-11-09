@@ -1,12 +1,11 @@
-from typing import Callable, Dict
-from rich.style import StyleType, Style
+from typing import Callable
 from rich.text import Text
 from dooit.api import Todo
 from dooit.ui.api import DooitAPI
 
 
 def status_icons(
-    icons: Dict[str, str] = {}, colors: Dict[str, StyleType] = {}, fmt="{}"
+    completed_icon="x", pending_icon="o", overdue_icon="!", fmt="{}"
 ) -> Callable:
     """
     Shows status icons for todos
@@ -18,23 +17,15 @@ def status_icons(
         """
 
         theme = api.vars.theme
-        default_styles = {
-            "completed": Style(color=theme.green, bold=True),
-            "pending": Style(color=theme.yellow, bold=True),
-            "overdue": Style(color=theme.red, bold=True),
-        }
-
-        default_icons = {
-            "completed": "x",
-            "pending": "o",
-            "overdue": "!",
-        }
-
-        default_styles.update(colors)
-        default_icons.update(icons)
-
-        icon = default_icons[status]
-        style = default_styles[status]
+        if status == "completed":
+            icon = completed_icon
+            style = theme.green
+        elif status == "pending":
+            icon = pending_icon
+            style = theme.yellow
+        else:
+            icon = overdue_icon
+            style = theme.red
 
         return Text(fmt.format(icon), style=style)
 
