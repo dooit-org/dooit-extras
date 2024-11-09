@@ -82,11 +82,11 @@ Options available for `fmt` parameters are:
 
 |<div style="width: 100px">Name</div> |Description|
 | :----------------:    | :----------------------------------------------------------------------------------------|
-|  percentage_complete  | The current progress in percentage (1-100)                                               |
-|  percentage_remaining | The remaining progress in percentage (1-100)                                             |
-|  children_count       | The total number of subtask the todo has                                                 |
+|  completed_percent    | The current progress in percentage (1-100)                                               |
+|  remaining_percent    | The remaining progress in percentage (1-100)                                             |
 |  completed_count      | The number of subtask completed                                                          |
 |  remaining_count      | The number of subtask not completed                                                      |
+|  children_count       | The total number of subtask the todo has                                                 |
 
 ```python
 
