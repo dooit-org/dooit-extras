@@ -14,7 +14,7 @@
 
 # Config 3
 
-A colorful theme based of [`Everforest Colorscheme`](https://github.com/sainnhe/everforest)
+A calm configuration based on [`Everforest Colorscheme`](https://github.com/sainnhe/everforest)
 
 ## Screenshots
 

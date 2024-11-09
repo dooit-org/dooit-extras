@@ -14,7 +14,7 @@
 
 # Config 2
 
-A colorful theme based of [`Catppuccin Colorscheme`](https://catppuccin.com/)
+A colorful configuration based on [`Catppuccin Colorscheme`](https://catppuccin.com/)
 
 ## Screenshots
 

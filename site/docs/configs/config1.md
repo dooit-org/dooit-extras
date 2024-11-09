@@ -14,7 +14,7 @@
 
 # Config 1
 
-A cool config based of [`Nord Theme`](https://www.nordtheme.com/) 
+A cool configuration based on [`Nord Theme`](https://www.nordtheme.com/) 
 
 ## Screenshots
 
