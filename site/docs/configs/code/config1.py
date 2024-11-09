@@ -59,6 +59,11 @@ def setup_dashboard(api: DooitAPI, _):
     now = datetime.now()
     formatted_date = now.strftime(" 󰸘 %A, %d %b ")
 
+    header = Text(
+        "I alone shall stand against the darkness of my overdue tasks",
+        style=Style(color=theme.primary, bold=True, italic=True),
+    )
+
     ascii_art = r"""
                      .
                     / V\
@@ -74,6 +79,8 @@ def setup_dashboard(api: DooitAPI, _):
     """
 
     items = [
+        header,
+        "",
         Text(ascii_art, style=api.vars.theme.primary),
         "",
         Text(
