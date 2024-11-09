@@ -75,7 +75,7 @@ Formatter to show the progress of a current todo with subtasks
 
 | Param|<div style="width: 100px">Default</div> |Description|
 | ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
-| fmt           |  `" ({percentage_complete}%)"`  | The format of the progress                                                    |
+| fmt           |  `" ({completed_percent}%)"`  | The format of the progress                                                    |
 
 
 Options available for `fmt` parameters are:

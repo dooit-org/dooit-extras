@@ -68,7 +68,7 @@ def description_strike_completed(dim: bool = True):
     return wrapper
 
 
-def todo_description_progress(fmt=" ({percentage_complete}%)"):
+def todo_description_progress(fmt=" ({completed_percent}%)"):
     @extra_formatter
     def wrapper(value: str, todo: Todo):
         if not todo.todos:
