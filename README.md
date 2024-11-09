@@ -17,8 +17,23 @@ For installation and configuration, check out [the wiki](https://dooit-org.githu
 
 Some screenshots of app configs done with dooit-extras!
 
+<details>
+  <summary>An icy configuration based on NordTheme ❄️ </summary>
+  
 ![Preview 1](./imgs/config1.png)
 
+</details>
+
+<details>
+  <summary>A colorful configuration based on Catpuccin 🐱 </summary>
+  
 ![Preview 2](./imgs/config2.png)
 
+</details>
+
+<details>  
+  <summary>A calm configuration based on Everforest 🌲 </summary>
+  
 ![Preview 3](./imgs/config3.png)
+
+</details>
