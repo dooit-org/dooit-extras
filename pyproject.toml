@@ -22,3 +22,6 @@ faker = "^30.8.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+ignore = ["F405", "F403"]
