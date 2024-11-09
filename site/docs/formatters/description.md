@@ -55,7 +55,7 @@ This formatter strikes the todos which are completed, and optionally dimmify the
 
 ```python
 
-from dooit_extras.formatters import description_strike_completed
+from dooit_extras.formatters import todo_description_progress
 from dooit.ui.api.events import subscribe, Startup
 
 
@@ -64,5 +64,39 @@ def setup(api, _):
     # ...
     api.formatter.workspaces.description.add(description_strike_completed(dim = True))
     api.formatter.todos.description.add(description_strike_completed(dim = True))
+    # ...
+```
+
+## Todo Progress
+
+Formatter to show the progress of a current todo with subtasks
+
+***Parameters***:
+
+| Param|<div style="width: 100px">Default</div> |Description|
+| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| fmt           |  `" ({percentage_complete}%)"`  | The format of the progress                                                    |
+
+
+Options available for `fmt` parameters are:
+
+|<div style="width: 100px">Name</div> |Description|
+| :----------------:    | :----------------------------------------------------------------------------------------|
+|  percentage_complete  | The current progress in percentage (1-100)                                               |
+|  percentage_remaining | The remaining progress in percentage (1-100)                                             |
+|  children_count       | The total number of subtask the todo has                                                 |
+|  completed_count      | The number of subtask completed                                                          |
+|  remaining_count      | The number of subtask not completed                                                      |
+
+```python
+
+from dooit_extras.formatters import description_strike_completed
+from dooit.ui.api.events import subscribe, Startup
+
+
+@subscribe(Startup)
+def setup(api, _):
+    # ...
+    api.formatter.todos.description.add(todo_description_progress())
     # ...
 ```
