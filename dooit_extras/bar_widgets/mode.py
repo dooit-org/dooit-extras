@@ -8,7 +8,11 @@ from dooit.ui.api import DooitAPI, subscribe
 from dooit.ui.api.events import ModeChanged
 
 
-def get_mode_wrapper(mode_styles: Dict[str, Style], fmt: str):
+def get_mode_wrapper(
+    mode_aliases: Dict[str, str],
+    mode_styles: Dict[str, Style],
+    fmt: str,
+):
     def get_default_mode_styles(theme: DooitThemeBase) -> Dict[str, Style]:
         fg = theme.background1
         modes = defaultdict(lambda: Style(color=fg, bgcolor=theme.primary))
@@ -25,7 +29,7 @@ def get_mode_wrapper(mode_styles: Dict[str, Style], fmt: str):
 
     @subscribe(ModeChanged)
     def get_mode(api: DooitAPI, _: ModeChanged):
-        mode = api.app._mode
+        mode = mode_aliases.get(api.app._mode, api.app._mode)
         styles_dict = get_default_mode_styles(api.vars.theme) | mode_styles
 
         return Text(fmt.format(mode), style=styles_dict[mode])
@@ -41,11 +45,12 @@ class Mode(BarUtilWidgetBase):
     def __init__(
         self,
         api: DooitAPI,
-        fmt=" {} ",
+        mode_aliases: Dict[str, str] = {},
         mode_styles: Dict[str, Style] = {},
+        fmt=" {} ",
     ) -> None:
         super().__init__(
-            func=get_mode_wrapper(mode_styles, fmt),
+            func=get_mode_wrapper(mode_aliases, mode_styles, fmt),
             width=None,
             api=api,
         )
