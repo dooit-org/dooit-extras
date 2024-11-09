@@ -20,7 +20,7 @@ def urgency_icons(
         theme = api.vars.theme
         default_styles = {
             1: Style(color=theme.green, bold=True),
-            2: Style(color=theme.yellow, bold=True), 
+            2: Style(color=theme.yellow, bold=True),
             3: Style(color=theme.orange, bold=True),
             4: Style(color=theme.red, bold=True),
         }
@@ -28,7 +28,7 @@ def urgency_icons(
         default_icons = {
             1: "󰲠",  # Low urgency
             2: "󰲢",  # Medium urgency
-            3: "󰲤",  # High urgency 
+            3: "󰲤",  # High urgency
             4: "󰲦",  # Critical urgency
         }
 

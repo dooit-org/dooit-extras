@@ -4,9 +4,7 @@ from dooit.api import Todo
 from dooit.ui.api import DooitAPI
 
 
-def status_icons(
-    completed="x", pending="o", overdue="!", fmt="{}"
-) -> Callable:
+def status_icons(completed="x", pending="o", overdue="!", fmt="{}") -> Callable:
     """
     Shows status icons for todos
     """

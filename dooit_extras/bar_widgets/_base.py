@@ -49,7 +49,7 @@ class BarUtilWidgetBase(StatusBarWidget):
         value.stylize(style)
 
         # Because the stylize method above will ignore other embedded styles
-        return Text.from_markup(value.markup) 
+        return Text.from_markup(value.markup)
 
     def render(self) -> Text:
         fg = self.fg or self.api.app.current_theme.background1
