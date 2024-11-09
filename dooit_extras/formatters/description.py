@@ -1,9 +1,9 @@
 from typing import Union, Optional
 from dooit.api import Todo, Workspace
-from rich.style import Style
+from rich.style import Style, StyleType
 from dooit.ui.api import DooitAPI
 from rich.style import Style
-from rich.text import Text
+from rich.text import Span, Text
 from dooit.ui.api import DooitAPI, extra_formatter
 import re
 
@@ -64,6 +64,27 @@ def description_strike_completed(dim: bool = True):
     def wrapper(value: str, todo: Todo):
         if todo.is_completed:
             return Text(value, style=Style(strike=True, dim=dim)).markup
+
+    return wrapper
+
+
+def description_highlight_tags(color: StyleType = "", fmt="@{}"):
+    @extra_formatter
+    def wrapper(value: str, todo: Todo, api: DooitAPI):
+        """
+        Highlight tags in the description.
+        """
+
+        regex = re.compile(r"@\w+")
+        style = color or api.vars.theme.primary
+
+        for match in re.finditer(regex, value):
+            start, end = match.span()
+            formatted_tag = fmt.format(value[start + 1 : end])  # +1 for @ symbol
+            formatted_tag = Text(formatted_tag, style=style).markup
+            value = value[:start] + formatted_tag + value[end:]
+
+        return value
 
     return wrapper
 
