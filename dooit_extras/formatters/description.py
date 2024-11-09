@@ -80,14 +80,14 @@ def todo_description_progress(fmt=" ({percentage_complete}%)"):
         remaining_count = children_count - completed_count
 
         percentage_complete = int(round((completed_count / children_count) * 100))
-        percetage_remaining = 100 - percentage_complete
+        percentage_remaining = 100 - percentage_complete
 
         data = dict(
             children_count=children_count,
             completed_count=completed_count,
             remaining_count=remaining_count,
             percentage_complete=percentage_complete,
-            percentage_remaining=percetage_remaining,
+            percentage_remaining=percentage_remaining,
         )
 
         return value + fmt.format(**data)
