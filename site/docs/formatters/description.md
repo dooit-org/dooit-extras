@@ -22,7 +22,6 @@ def setup(api, _):
     # ...
 ```
 
-
 ## Highlight Link
 
 This formatter highlights any url present within the description with theme accent
@@ -41,6 +40,28 @@ def setup(api, _):
     # ...
     api.formatter.workspaces.description.add(description_highlight_link())
     api.formatter.todos.description.add(description_highlight_link())
+    # ...
+```
+
+## Highlight Tags
+
+This formatter highlights the tags(words starting with `@`) present in the description 
+
+| Param|<div style="width: 100px">Default</div> |Description|
+| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| color         |  `""`               | The color/style to use for highlighting the tags, Defaults to theme's primary color      |
+| fmt           |<span class="nerd-icon">" {}"</span>| The format to use to show the tags                                       |
+
+```python
+
+from dooit_extras.formatters import description_highlight_tags
+from dooit.ui.api.events import subscribe, Startup
+
+@subscribe(Startup)
+def setup(api, _):
+    # ...
+    api.formatter.workspaces.description.add(description_highlight_tags())
+    api.formatter.todos.description.add(description_highlight_tags())
     # ...
 ```
 
