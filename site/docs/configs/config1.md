@@ -1,6 +1,6 @@
 # Config 1
 
-A cool config based of `Nord Theme` 
+A cool config based of [`Nord Theme`](https://www.nordtheme.com/) 
 
 ## Screenshots
 
