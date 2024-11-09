@@ -54,7 +54,7 @@ def setup_formatters(api: DooitAPI, _):
 
     # --------- TODOS ---------
     # status formatter
-    fmt.todos.status.add(status_icons(completed="[r]󱓻[/r] ", pending="󱓼 ", overdue="󱓼 "))
+    fmt.todos.status.add(status_icons(completed="󱓻 ", pending="󱓼 ", overdue="󱓼 "))
 
     # urgency formatte
     u_icons = {1: "  󰯬", 2: "  󰯯", 3: "  󰯲", 4: "  󰯵"}
