@@ -41,7 +41,7 @@ def setup_bar(api: DooitAPI, _):
     widgets = [
         Mode(api),
         Spacer(api, width=0),
-        StatusIcons(api, bg = theme.background2),
+        StatusIcons(api, bg=theme.background2),
         TextBox(api, text="  ", bg=theme.primary),
         TextBox(api, text=" -4°C ", fg=theme.foreground3, bg=theme.background3),
         TextBox(api, text=" 󰥔 ", bg=theme.primary),

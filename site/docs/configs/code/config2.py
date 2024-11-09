@@ -90,11 +90,11 @@ def setup_bar(api: DooitAPI, _):
     mode_aliases = {"NORMAL": "󰷸 NORMAL", "INSERT": "󰛿 INSERT"}
 
     widgets = [
-        TextBox(api, " 󰄛 ", bg = theme.magenta),
+        TextBox(api, " 󰄛 ", bg=theme.magenta),
         Spacer(api, width=1),
         Mode(api, mode_aliases),
         Spacer(api, width=0),
-        WorkspaceProgress(api, fmt = " 󰞯 {}% ", bg = theme.secondary),
+        WorkspaceProgress(api, fmt=" 󰞯 {}% ", bg=theme.secondary),
         Spacer(api, width=1),
         Date(api, fmt=" 󰃰 {} "),
     ]
