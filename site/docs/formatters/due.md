@@ -5,7 +5,11 @@
 This widget shows the date in a simple format
 
 Eg: Instead of the default `yyyy-mm-dd`, it'll show in the format: \
-`{Mon} {day} ['year(optional)]`
+`{Mon} {day} ['year(optional)] + <HH:MM if present>`
+
+| Param|<div style="width: 100px">Default</div> |Description|
+| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| fmt           |  `"{}"`             | The custom format for showing the value                                                  |
 
 ```python
 
@@ -15,7 +19,7 @@ from dooit.ui.api.events import subscribe, Startup
 @subscribe(Startup)
 def setup(api, _):
     # ...
-    api.formatter.todos.due.add(due_causal_format)
+    api.formatter.todos.due.add(due_causal_format())
     # ...
 ```
 
@@ -29,10 +33,14 @@ This formatter shows a bold red `Today` text when the todo is due on the same da
 from dooit_extras.formatters import due_danger_today
 from dooit.ui.api.events import subscribe, Startup
 
+| Param|<div style="width: 100px">Default</div> |Description|
+| ------------- | :----------------:  | :----------------------------------------------------------------------------------------|
+| fmt           |  `"{}"`             | The custom format for showing the value                                                  |
+
 @subscribe(Startup)
 def setup(api, _):
     # ...
-    api.formatter.todos.due.add(due_danger_today)
+    api.formatter.todos.due.add(due_danger_today())
     # ...
 ```
 

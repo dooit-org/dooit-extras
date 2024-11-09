@@ -1,47 +1,53 @@
-from typing import Optional
+from typing import Callable, Optional
 from rich.style import Style
 from dooit.api.todo import datetime, Todo
 from dooit.ui.api import DooitAPI, extra_formatter
 from rich.text import Text
 
 
-def due_causal_format(due: Optional[datetime], _: Todo) -> str:
-    """
-    Shows the date in a more simple format:
-    Example: `23 Oct` instead of `23-10-2024`
-    """
+def due_causal_format(fmt="{}") -> Callable:
+    def wrapper(due: Optional[datetime], _: Todo) -> str:
+        """
+        Shows the date in a more simple format:
+        Example: `23 Oct` instead of `23-10-2024`
+        """
 
-    if not due:
-        return ""
+        if not due:
+            return ""
 
-    current_year = datetime.now().year
-    dt_format = "%b %d"
+        current_year = datetime.now().year
+        dt_format = "%b %d"
 
-    if due.year != current_year:
-        dt_format += " '%y"
+        if due.year != current_year:
+            dt_format += " '%y"
 
-    if due.hour != 0 or due.minute != 0:
-        dt_format += " (%-I:%M)"
+        if due.hour != 0 or due.minute != 0:
+            dt_format += " (%H:%M)"
 
-    return due.strftime(dt_format)
+        return fmt.format(due.strftime(dt_format))
+
+    return wrapper
 
 
-def due_danger_today(due: Optional[datetime], _: Todo, api: DooitAPI) -> Optional[str]:
-    """
-    If the due date is today, show a bold red "Today" text.
-    """
+def due_danger_today(fmt: str = "{}") -> Callable:
+    def wrapper(due: Optional[datetime], _: Todo, api: DooitAPI) -> Optional[str]:
+        """
+        If the due date is today, show a bold red "Today" text.
+        """
 
-    if not due:
-        return ""
+        if not due:
+            return ""
 
-    if due.date() == datetime.today().date():
-        return Text(
-            "Today",
-            style=Style(
-                color=api.vars.theme.red,
-                bold=True,
-            ),
-        ).markup
+        if due.date() == datetime.today().date():
+            return Text(
+                fmt.format("Today"),
+                style=Style(
+                    color=api.vars.theme.red,
+                    bold=True,
+                ),
+            ).markup
+
+    return wrapper
 
 
 def due_icon(completed: str = "󰃯 ", pending: str = "󰃰 ", overdue: str = " "):
