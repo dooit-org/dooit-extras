@@ -78,7 +78,7 @@ export default defineConfig({
         ],
       },
       {
-        text: "Configs",
+        text: "Example Configs",
         collapsible: true,
         collapsed: true,
         items: [
