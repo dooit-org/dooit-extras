@@ -61,7 +61,7 @@ def setup_formatters(api: DooitAPI, _):
     fmt.todos.urgency.add(urgency_icons(icons=u_icons))
 
     # due formatter
-    fmt.todos.due.add(due_casual_format)
+    fmt.todos.due.add(due_casual_format())
     fmt.todos.due.add(due_icon(completed="󰐅 ", pending="󱢗 ", overdue="󱐚 "))
 
     # effort formatter
