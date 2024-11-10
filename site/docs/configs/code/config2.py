@@ -121,8 +121,8 @@ def setup_dashboard(api: DooitAPI, _):
     ascii_art = Text(ascii_art, style=theme.primary)
     ascii_art.highlight_words(["TODOS"], style=theme.red)
 
-    due_today = len([i.is_due_today for i in Todo.all()])
-    overdue = len([i.is_overdue for i in Todo.all()])
+    due_today = sum([1 for i in Todo.all() if i.is_due_today and i.is_pending])
+    overdue = sum([1 for i in Todo.all() if i.is_overdue])
 
     header = Text(
         "Another day, another opportunity to organize my todos and then procrastinate",
