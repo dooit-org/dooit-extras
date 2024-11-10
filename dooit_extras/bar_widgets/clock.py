@@ -1,6 +1,6 @@
 from datetime import datetime
 from dooit.ui.api import DooitAPI, timer
-from ._base import BarUtilWidgetBase
+from .text_poller import Custom
 
 
 def get_clock_wrapper(format: str):
@@ -11,7 +11,7 @@ def get_clock_wrapper(format: str):
     return get_clock
 
 
-class Clock(BarUtilWidgetBase):
+class Clock(Custom):
     def __init__(
         self,
         api: DooitAPI,
@@ -21,5 +21,10 @@ class Clock(BarUtilWidgetBase):
         bg: str = "",
     ) -> None:
         super().__init__(
-            func=get_clock_wrapper(format), width=None, api=api, fmt=fmt, fg=fg, bg=bg
+            api=api,
+            function=get_clock_wrapper(format),
+            width=None,
+            fmt=fmt,
+            fg=fg,
+            bg=bg,
         )

@@ -1,7 +1,7 @@
 from typing import Union
 from dooit.ui.api import DooitAPI, subscribe
 from dooit.ui.api.events import Startup, WorkspaceSelected
-from ._base import BarUtilWidgetBase
+from .text_poller import Custom
 
 
 def get_workspace_name_wrapper(no_workspace_text: str):
@@ -23,7 +23,7 @@ def get_workspace_name_wrapper(no_workspace_text: str):
     return get_workspace_name
 
 
-class CurrentWorkspace(BarUtilWidgetBase):
+class CurrentWorkspace(Custom):
     def __init__(
         self,
         api: DooitAPI,
@@ -33,8 +33,8 @@ class CurrentWorkspace(BarUtilWidgetBase):
         bg: str = "",
     ) -> None:
         super().__init__(
-            func=get_workspace_name_wrapper(no_workspace_text),
             api=api,
+            function=get_workspace_name_wrapper(no_workspace_text),
             width=None,
             fmt=fmt,
         )

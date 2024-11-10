@@ -1,6 +1,6 @@
 from time import time
 from dooit.ui.api import DooitAPI, timer
-from ._base import BarUtilWidgetBase
+from .text_poller import Custom
 
 
 class Counter:
@@ -72,7 +72,7 @@ def get_ticker_wrapper(counter: Counter, paused_text: str, default_text: str):
     return get_ticker
 
 
-class Ticker(BarUtilWidgetBase):
+class Ticker(Custom):
     def __init__(
         self,
         api: DooitAPI,
@@ -87,14 +87,13 @@ class Ticker(BarUtilWidgetBase):
         self.counter = Counter()
 
         super().__init__(
-            func=get_ticker_wrapper(self.counter, paused_text, default_text),
-            width=None,
             api=api,
+            function=get_ticker_wrapper(self.counter, paused_text, default_text),
+            width=None,
             fmt=fmt,
+            fg=fg,
+            bg=bg,
         )
-
-        self.fg = fg
-        self.bg = bg
 
         # set keybinds
         self.api.keys.set(resume_key, self.counter.start)

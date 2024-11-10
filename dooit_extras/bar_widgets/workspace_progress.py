@@ -2,7 +2,7 @@ from typing import Union
 from dooit.ui.api import DooitAPI, subscribe
 from dooit.ui.api.events import WorkspaceSelected, TodoEvent
 from dooit.api import Workspace
-from ._base import BarUtilWidgetBase
+from .text_poller import Custom
 
 
 def get_completed(workspace: Workspace):
@@ -34,8 +34,13 @@ def get_workspace_completion(
     return str(get_completed(workspace))
 
 
-class WorkspaceProgress(BarUtilWidgetBase):
+class WorkspaceProgress(Custom):
     def __init__(self, api: DooitAPI, fmt="{}", fg: str = "", bg: str = "") -> None:
         super().__init__(
-            func=get_workspace_completion, width=None, api=api, fmt=fmt, fg=fg, bg=bg
+            api=api,
+            function=get_workspace_completion,
+            width=None,
+            fmt=fmt,
+            fg=fg,
+            bg=bg,
         )

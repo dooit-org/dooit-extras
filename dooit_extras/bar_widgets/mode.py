@@ -1,7 +1,7 @@
 from rich.text import Text, TextType
-from ._base import BarUtilWidgetBase
 from dooit.ui.api import DooitAPI, subscribe
 from dooit.ui.api.events import ModeChanged
+from .text_poller import Custom
 
 
 def get_mode_wrapper(
@@ -27,7 +27,7 @@ def get_mode_wrapper(
     return wrapper
 
 
-class Mode(BarUtilWidgetBase):
+class Mode(Custom):
     """
     Mode Bar Widget to show mode
     """
@@ -42,9 +42,9 @@ class Mode(BarUtilWidgetBase):
         bg: str = "",
     ) -> None:
         super().__init__(
-            func=get_mode_wrapper(format_normal, format_insert),
-            width=None,
             api=api,
+            function=get_mode_wrapper(format_normal, format_insert),
+            width=None,
             fmt=fmt,
             fg=fg,
             bg=bg,
