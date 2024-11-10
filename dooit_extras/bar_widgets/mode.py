@@ -1,40 +1,30 @@
-from collections import defaultdict
-from typing import Dict
-from dooit.ui.tui import DooitThemeBase
-from rich.style import Style
-from rich.text import Text
+from rich.text import Text, TextType
 from ._base import BarUtilWidgetBase
 from dooit.ui.api import DooitAPI, subscribe
 from dooit.ui.api.events import ModeChanged
 
 
 def get_mode_wrapper(
-    mode_aliases: Dict[str, str],
-    mode_styles: Dict[str, Style],
-    fmt: str,
+    format_normal: TextType,
+    format_insert: TextType,
 ):
-    def get_default_mode_styles(theme: DooitThemeBase) -> Dict[str, Style]:
-        fg = theme.background1
-        modes = defaultdict(lambda: Style(color=fg, bgcolor=theme.primary))
-
-        extra_styles = dict(
-            NORMAL=Style(color=fg, bgcolor=theme.primary),
-            INSERT=Style(color=fg, bgcolor=theme.secondary),
-        )
-
-        for mode, style in extra_styles.items():
-            modes[mode] = style
-
-        return modes
-
     @subscribe(ModeChanged)
-    def get_mode(api: DooitAPI, _: ModeChanged):
-        mode = mode_aliases.get(api.app._mode, api.app._mode)
-        styles_dict = get_default_mode_styles(api.vars.theme) | mode_styles
+    def wrapper(_: DooitAPI, event: ModeChanged):
+        mode = event.mode
 
-        return Text.from_markup(fmt.format(mode), style=styles_dict[mode])
+        if mode == "NORMAL":
+            text = format_normal
+        elif mode == "INSERT":
+            text = format_insert
+        else:
+            text = mode
 
-    return get_mode
+        if isinstance(text, Text):
+            text = text.markup
+
+        return text
+
+    return wrapper
 
 
 class Mode(BarUtilWidgetBase):
@@ -45,15 +35,17 @@ class Mode(BarUtilWidgetBase):
     def __init__(
         self,
         api: DooitAPI,
-        mode_aliases: Dict[str, str] = {},
-        mode_styles: Dict[str, Style] = {},
-        fmt=" {} ",
+        format_normal: TextType = " NORMAL ",
+        format_insert: TextType = " INSERT ",
+        fmt="{}",
+        fg: str = "",
+        bg: str = "",
     ) -> None:
         super().__init__(
-            func=get_mode_wrapper(mode_aliases, mode_styles, fmt),
+            func=get_mode_wrapper(format_normal, format_insert),
             width=None,
             api=api,
+            fmt=fmt,
+            fg=fg,
+            bg=bg,
         )
-
-    def render(self) -> Text:
-        return self.rich_value()
