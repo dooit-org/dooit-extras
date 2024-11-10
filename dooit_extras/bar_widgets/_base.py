@@ -16,7 +16,7 @@ class BarUtilWidgetBase(StatusBarWidget):
         func: Callable,
         width: Optional[int],
         api: DooitAPI,
-        fmt="{}",
+        fmt: TextType = "{}",
         fg: str = "",
         bg: str = "",
     ) -> None:
@@ -35,6 +35,9 @@ class BarUtilWidgetBase(StatusBarWidget):
 
     @property
     def value(self) -> str:
+        if isinstance(self.fmt, Text):
+            self.fmt = self.fmt.markup
+
         return self.fmt.format(super().value)
 
     def render_text(
