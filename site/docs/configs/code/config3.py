@@ -86,16 +86,21 @@ def setup_layout(api: DooitAPI, _):
 @subscribe(Startup)
 def setup_bar(api: DooitAPI, _):
     theme = api.vars.theme
-    mode_aliases = {"NORMAL": "NOR", "INSERT": "INS"}
+    mode_style = Style(color=theme.background1, bgcolor=theme.primary, bold=True)
 
     widgets = [
-        Mode(api, mode_aliases, fmt = " 󰌪 {}"),
+        Mode(
+            api,
+            format_normal="NOR",
+            format_insert="INS",
+            fmt=Text(" 󰌪 {}", style=mode_style).markup,
+        ),
         Powerline.right_rounded(api, fg=theme.primary),
         Spacer(api, width=0),
         Powerline.left_rounded(api, fg=theme.primary),
         Ticker(api, fmt=" 󱎫 {} "),
-        Powerline.left_rounded(api, fg=theme.yellow, bg = theme.primary),
-        Clock(api, format = "%H:%M", fmt=" 󰥔 {} ", bg = theme.yellow),
+        Powerline.left_rounded(api, fg=theme.yellow, bg=theme.primary),
+        Clock(api, format="%H:%M", fmt=" 󰥔 {} ", bg=theme.yellow),
     ]
     api.bar.set(widgets)
 

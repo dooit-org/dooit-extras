@@ -87,12 +87,11 @@ def setup_layout(api: DooitAPI, _):
 @subscribe(Startup)
 def setup_bar(api: DooitAPI, _):
     theme = api.vars.theme
-    mode_aliases = {"NORMAL": "󰷸 NORMAL", "INSERT": "󰛿 INSERT"}
 
     widgets = [
         TextBox(api, " 󰄛 ", bg=theme.magenta),
         Spacer(api, width=1),
-        Mode(api, mode_aliases),
+        Mode(api, format_normal=" 󰷸 NORMAL ", format_insert=" 󰛿 INSERT "),
         Spacer(api, width=0),
         WorkspaceProgress(api, fmt=" 󰞯 {}% ", bg=theme.secondary),
         Spacer(api, width=1),
