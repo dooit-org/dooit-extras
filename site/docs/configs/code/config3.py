@@ -1,4 +1,3 @@
-from dooit.api import Todo
 from dooit.ui.api import DooitAPI, subscribe
 from dooit.ui.api.events import Startup
 from dooit.api.theme import DooitThemeBase
