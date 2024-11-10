@@ -1,4 +1,4 @@
-# Dooit Extras
+# Dooit Extras 🪄
 
 A collection of utilities to customize your [dooit](https://github.com/dooit-org/dooit)
 
