@@ -20,13 +20,14 @@ in
 
     build-system = with python3.pkgs; [poetry-core];
     buildInputs = [dooit];
+
     # No tests available
     doCheck = false;
 
     meta = with lib; {
       description = "Extra Utilities for Dooit";
       homepage = "https://github.com/dooit-org/dooit-extras";
-      changelog = "https://github.com/dooit-org/dooit-extras/blob/main/CHANGELOG.md"; # TODO: change to version
+      changelog = "https://github.com/dooit-org/dooit-extras/blob/v${version}/CHANGELOG.md";
       license = licenses.mit;
       maintainers = with maintainers; [
         kraanzu
