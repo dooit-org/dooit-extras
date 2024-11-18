@@ -1,6 +1,6 @@
 from collections import defaultdict
 from dooit.ui.api import DooitAPI
-from dooit.ui.tui import DooitThemeBase
+from dooit.api.theme import DooitThemeBase
 from rich.text import Text, TextType
 from rich.style import Style
 from .text_box import TextBox
