@@ -305,13 +305,13 @@ files = [
 
 [[package]]
 name = "dooit"
-version = "3.0.1"
+version = "3.0.4"
 description = "A TUI Todo Manager"
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "dooit-3.0.1-py3-none-any.whl", hash = "sha256:825d062b17535cc47bc6d4e14ef982231f41c7eb7fb21b6c03e91fdf28a0e880"},
-    {file = "dooit-3.0.1.tar.gz", hash = "sha256:2a87340dd240e69b8b5f2ceed41c86206113ee3f9f32933d40887d2b1afd67e7"},
+    {file = "dooit-3.0.4-py3-none-any.whl", hash = "sha256:d86453031d240308b434aebb5727fe47b4dc9c05b870728d50c0a6801368f935"},
+    {file = "dooit-3.0.4.tar.gz", hash = "sha256:0462f68909d74bec9977aeb9567f0da137d843e6b72a567772f66218a39a1ced"},
 ]
 
 [package.dependencies]
@@ -321,7 +321,7 @@ pyperclip = ">=1.9.0,<2.0.0"
 python-dateutil = ">=2.9.0.post0,<3.0.0"
 pyyaml = ">=6.0.2,<7.0.0"
 sqlalchemy = ">=2.0.36,<3.0.0"
-textual = ">=0.85.2,<0.86.0"
+textual = ">=0.86.1,<0.87.0"
 tzlocal = ">=5.2,<6.0"
 
 [[package]]
@@ -1407,13 +1407,13 @@ sqlcipher = ["sqlcipher3_binary"]
 
 [[package]]
 name = "textual"
-version = "0.85.2"
+version = "0.86.1"
 description = "Modern Text User Interface framework"
 optional = false
 python-versions = "<4.0.0,>=3.8.1"
 files = [
-    {file = "textual-0.85.2-py3-none-any.whl", hash = "sha256:9ccdeb6b8a6a0ff72d497f714934f2e524f2eb67783b459fb08b1339ee537dc0"},
-    {file = "textual-0.85.2.tar.gz", hash = "sha256:2a416995c49d5381a81d0a6fd23925cb0e3f14b4f239ed05f35fa3c981bb1df2"},
+    {file = "textual-0.86.1-py3-none-any.whl", hash = "sha256:ebc2bfd92c2f1a451c12dcbcfda002598a2fc9793d1684be83514b5fba75f915"},
+    {file = "textual-0.86.1.tar.gz", hash = "sha256:a6e68de5383415f222f26b4049c2a92ed204071fdfebe3d729f8dd373ca5f519"},
 ]
 
 [package.dependencies]
@@ -1645,4 +1645,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "d0f72fbd6a58beb30d3db69e1f9afb0df3befa254a639989d68d68c133f276c8"
+content-hash = "a401aa6ba73077a59f4fa76deb36537050a166221ecb8ebcfd02f510be3daf3e"

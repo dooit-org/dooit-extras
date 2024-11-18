@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-dooit = "^3.0.1"
+dooit = "^3.0.4"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.7.2"
