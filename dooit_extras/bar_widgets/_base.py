@@ -1,6 +1,6 @@
 from typing import Callable, Optional
 from dooit.ui.api import DooitAPI
-from dooit.ui.tui import DooitThemeBase
+from dooit.api.theme import DooitThemeBase
 from rich.style import Style, StyleType
 from rich.text import Text, TextType
 from dooit.ui.widgets.bars import StatusBarWidget
@@ -55,8 +55,8 @@ class BarUtilWidgetBase(StatusBarWidget):
         return Text.from_markup(value.markup)
 
     def render(self) -> Text:
-        fg = self.fg or self.api.app.current_theme.background1
-        bg = self.bg or self.api.app.current_theme.primary
+        fg = self.fg or self.api.vars.theme.background1
+        bg = self.bg or self.api.vars.theme.primary
         style = Style(color=fg, bgcolor=bg)
 
         return self.render_text(style=style)
