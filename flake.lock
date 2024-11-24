@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1732453485,
-        "narHash": "sha256-ISwtWMyj+8FUBrr31VDmLe22ccaaw5tYLHhdiceOjPc=",
+        "lastModified": 1732456496,
+        "narHash": "sha256-OHzU6dJ+VfwckvfTiNF3UlPTYRZOWcjQjntp4okNCgE=",
         "owner": "dooit-org",
         "repo": "dooit",
-        "rev": "7e9c1734c51bb4ac73c0de2fa44a19f24f9334ef",
+        "rev": "3ab2375577f06e2110a460f714fd9a68616ff637",
         "type": "github"
       },
       "original": {
