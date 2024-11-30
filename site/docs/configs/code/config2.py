@@ -14,7 +14,7 @@ class DooitThemeCatppuccin(DooitThemeBase):
     _name: str = "dooit-catppuccin"
 
     # background colors
-    background1: str = "#1e1e2e"  #  Darkest
+    background1: str = "#1e1e2e"  # Darkest
     background2: str = "#313244"
     background3: str = "#45475a"  # Lightest
 
