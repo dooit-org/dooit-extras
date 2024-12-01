@@ -30,7 +30,7 @@
     );
 
     overlay = final: prev: {
-      dooit-extras = self.packages.${final.system}.default;
+      dooit-extras = packageFor final.system;
     };
   };
 }
