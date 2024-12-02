@@ -76,8 +76,8 @@ This formatter strikes the todos which are completed, and optionally dimmify the
 
 ```python
 
-from dooit_extras.formatters import todo_description_progress
 from dooit.ui.api.events import subscribe, Startup
+from dooit_extras.formatters import description_strike_completed
 
 
 @subscribe(Startup)
@@ -111,7 +111,7 @@ Options available for `fmt` parameters are:
 
 ```python
 
-from dooit_extras.formatters import description_strike_completed
+from dooit_extras.formatters import todo_description_progress
 from dooit.ui.api.events import subscribe, Startup
 
 
