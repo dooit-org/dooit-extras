@@ -18,19 +18,18 @@
       system:
         import nixpkgs {
           inherit system;
+          overlays = [
+            (final: prev: {
+              dooit-extras = prev.callPackage ./nix {
+                dooit = dooit.packages.${system}.default;
+              };
+            })
+          ];
         }
     );
-
-    packageFor = system: pkgsFor.${system}.callPackage ./nix {dooit = dooit.packages.${system}.default;};
   in {
-    packages = forEachSystem (
-      system: {
-        default = packageFor system;
-      }
-    );
-
-    overlay = final: prev: {
-      dooit-extras = packageFor final.system;
-    };
+    packages = forEachSystem (system: {
+      default = pkgsFor.${system}.dooit-extras;
+    });
   };
 }
