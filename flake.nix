@@ -12,14 +12,16 @@
     dooit,
     ...
   }: let
-    forEachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all;
+    forEachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
   in {
+    # Define the overlay
     overlays.default = final: prev: {
       dooit-extras = prev.callPackage ./nix {
-        dooit = dooit.packages.${prev.system}.default;
+        dooit = dooit.packages.${final.system}.default;
       };
     };
 
+    # Make packages available
     packages = forEachSystem (system: let
       pkgs = import nixpkgs {
         inherit system;
@@ -28,5 +30,8 @@
     in {
       default = pkgs.dooit-extras;
     });
+
+    # Make overlay available for home-manager or other configurations
+    nixpkgs.overlays = [self.overlays.default];
   };
 }
