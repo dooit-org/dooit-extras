@@ -13,23 +13,20 @@
     ...
   }: let
     forEachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all;
-
-    pkgsFor = forEachSystem (
-      system:
-        import nixpkgs {
-          inherit system;
-          overlays = [
-            (final: prev: {
-              dooit-extras = prev.callPackage ./nix {
-                dooit = dooit.packages.${system}.default;
-              };
-            })
-          ];
-        }
-    );
   in {
-    packages = forEachSystem (system: {
-      default = pkgsFor.${system}.dooit-extras;
+    overlays.default = final: prev: {
+      dooit-extras = prev.callPackage ./nix {
+        dooit = dooit.packages.${prev.system}.default;
+      };
+    };
+
+    packages = forEachSystem (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [self.overlays.default];
+      };
+    in {
+      default = pkgs.dooit-extras;
     });
   };
 }
