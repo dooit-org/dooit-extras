@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dooit-extras"
-version = "0.2.0"
+version = "0.2.1"
 description = "A collection of utilities to customize your dooit!"
 authors = ["kraanzu <kraanzu@gmail.com>"]
 license = "MIT"
@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-dooit = "^3.0.4"
+dooit = "^3.2.2"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.7.2"
