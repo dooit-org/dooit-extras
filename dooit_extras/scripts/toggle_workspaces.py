@@ -4,8 +4,8 @@ from dooit.ui.api import DooitAPI
 def toggle_workspaces(api: DooitAPI):
     def wrapper():
         """Toggles the visibility of the workspaces tree"""
-        workspace_switcher = api.app.query_one("#workspace_switcher")
-        todo_switcher = api.app.query_one("#todo_switcher")
+        workspace_switcher = api.app.screen.query_one("#workspace_switcher")
+        todo_switcher = api.app.screen.query_one("#todo_switcher")
 
         if workspace_switcher.display:
             workspace_switcher.display = False
